@@ -20,4 +20,10 @@ async function getByID(id) {
     return user;
 }
 
-module.exports = {getAll, getByID};
+async function createLeague(leagueName, maxNumberOfCoaches, format, megaTiers, sTiers, aTiers, bTiers, cTiers, dTiers) {
+    const knex = await connectDatabase();
+    let league = knex('league').insert({name: leagueName, maxNumberOfCoaches: maxNumberOfCoaches, format: format, megaTiers: megaTiers, sTiers: sTiers, aTiers: aTiers, bTiers: bTiers, cTiers: cTiers, dTiers: dTiers});
+    return league;
+}
+
+module.exports = {getAll, getByID, createLeague};

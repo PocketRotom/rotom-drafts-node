@@ -10,14 +10,13 @@ module.exports = {
                 data: leagues
             });
         } catch (err) {
-            console.log(err);
             return res.status(500).json({
                 success: false,
                 error: "Server Error!"
             })
         }
     },
-    findUserByID: async (req, res) => {
+    findLeagueByID: async (req, res) => {
         try {
             let league = await League.getByID(req.params.leagueID);
             return res.status(200).json({
@@ -32,4 +31,31 @@ module.exports = {
             })
         }
     },
+    createLeague: async (req, res) => {
+        try {
+            let leagueName = req.body.leagueName;
+            let maxNumberOfCoaches = req.body.maxNumberOfCoaches;
+            let format = req.body.format;
+            let megaTiers = req.body.mega;
+            let sTiers = req.body.sTier;
+            let aTiers = req.body.aTier;
+            let bTiers = req.body.bTier;
+            let cTiers = req.body.cTier;
+            let dTiers = req.body.dTier;
+            let league = await League.createLeague(leagueName, maxNumberOfCoaches, format, megaTiers, sTiers, aTiers, bTiers, cTiers, dTiers);
+
+            //TODO Add image later
+            return res.status(200).json({
+                success: true,
+                count: league.length,
+                data: league
+            });
+            
+        } catch (err) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    }
 }
