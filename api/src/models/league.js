@@ -14,16 +14,46 @@ async function getAll() {
 
 async function getByID(id) {
     const knex = await connectDatabase();
-    let user = knex.select("*").from('league').where({
+    let league = knex.select("*").from('league').where({
         idLeague: id
     });
-    return user;
-}
-
-async function createLeague(leagueName, maxNumberOfCoaches, format, megaTiers, sTiers, aTiers, bTiers, cTiers, dTiers) {
-    const knex = await connectDatabase();
-    let league = knex('league').insert({name: leagueName, maxNumberOfCoaches: maxNumberOfCoaches, format: format, megaTiers: megaTiers, sTiers: sTiers, aTiers: aTiers, bTiers: bTiers, cTiers: cTiers, dTiers: dTiers});
     return league;
 }
 
-module.exports = {getAll, getByID, createLeague};
+async function createLeague(leagueName, maxNumberOfCoaches, format, megaTiers, sTiers, aTiers, bTiers, cTiers, dTiers, userID) {
+    const knex = await connectDatabase();
+    let league = await knex('league').insert({name: leagueName, maxNumberOfCoaches: maxNumberOfCoaches, format: format, megaTiers: megaTiers, sTiers: sTiers, aTiers: aTiers, bTiers: bTiers, cTiers: cTiers, dTiers: dTiers});
+    addAdmin(league, userID);
+    return league;
+}
+
+async function addAdmin(leagueID, userID) {
+    const knex = await connectDatabase();
+
+    let league = getByID(leagueID);
+
+    if (!league) {
+        throw "League doesn't exist";
+    }
+
+    let admin = knex('leagueadmins').insert({
+        idLeague: leagueID,
+        idUser: userID
+    })
+
+    return admin;
+}
+
+async function getAdmins(leagueID) {
+    const knex = await connectDatabase();
+
+    let admins = knex("leagueadmins").select("*").where({
+        idLeague: leagueID
+    });
+    
+    return admins;
+}
+
+
+
+module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins};

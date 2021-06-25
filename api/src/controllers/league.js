@@ -42,7 +42,8 @@ module.exports = {
             let bTiers = req.body.bTier;
             let cTiers = req.body.cTier;
             let dTiers = req.body.dTier;
-            let league = await League.createLeague(leagueName, maxNumberOfCoaches, format, megaTiers, sTiers, aTiers, bTiers, cTiers, dTiers);
+            let userID = req.body.userID;
+            let league = await League.createLeague(leagueName, maxNumberOfCoaches, format, megaTiers, sTiers, aTiers, bTiers, cTiers, dTiers, userID);
 
             //TODO Add image later
             return res.status(200).json({
@@ -52,6 +53,42 @@ module.exports = {
             });
             
         } catch (err) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
+    getAdmins: async (req, res) => {
+        try {
+            let leagueID = req.params.leagueID;
+
+            let admins = await League.getAdmins(leagueID);
+
+            return res.status(200).json({
+                success: true,
+                count: admins.length,
+                data: admins
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
+    addAdmin: async (req, res) => {
+        try {
+            let leagueID = req.params.leagueID;
+            let userID = req.body.userID;
+
+            let admin = await League.addAdmin(leagueID, userID);
+            return res.status(200).json({
+                success: true
+            });
+
+        } catch (error) {
+            console.log(error);
             return res.status(500).json({
                 success: false,
                 error: "Server Error!"

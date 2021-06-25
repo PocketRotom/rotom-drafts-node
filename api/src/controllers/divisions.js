@@ -16,4 +16,37 @@ module.exports = {
             })
         }
     },
+    getTeams: async (req, res) => {
+        try {
+            let teams = await Divisions.getTeamsByDivision(req.params.divisionID);
+            return res.status(200).json({
+                success: true,
+                count: teams.length,
+                data: teams
+            });
+        } catch (err) {
+            console.log(err);
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
+    getTeamsWithNoDivision: async (req, res) => {
+        try {
+            console.log(req.params);
+            let teams = await Divisions.getTeamsWithNoDivision(req.params.leagueID);
+            return res.status(200).json({
+                success: true,
+                count: teams.length,
+                data: teams
+            });
+        } catch (err) {
+            //console.log(err);
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    }
 }
