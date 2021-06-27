@@ -54,6 +54,35 @@ async function getAdmins(leagueID) {
     return admins;
 }
 
+async function updateSignups(leagueID, signups) {
+    const knex = await connectDatabase();
+
+    let edited = knex("league").where({
+        idLeague: leagueID,
+    }).update({
+        signUpsOpen: signups
+    });
+
+    return edited;
+
+}
+
+async function getNonAdmins(leagueID) {
+    const knex = await connectDatabase();
+    // SELECT DISTINCT users.userID, users.username
+    // FROM users LEFT JOIN leagueadmins ON (users.userID = leagueadmins.idUser AND leagueadmins.idLeague != $leagueID)
+
+    let subquery = knex("leagueadmins").select("idUser").where({
+        idLeague: leagueID
+    });
+
+    let nonAdmins = knex("users").distinct("userID", "username").whereNotIn("userID", subquery);
+    
+    return nonAdmins;
+}
 
 
-module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins};
+
+
+
+module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins, updateSignups, getNonAdmins, getTeams};

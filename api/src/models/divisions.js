@@ -17,7 +17,7 @@ async function getTeamsByDivision(divisionID) {
     let teams = await knex.raw(`SELECT *, wins * 3 AS points FROM team WHERE idDivision = ${divisionID};`);
     teams = teams[0];
 
-    teams.sort((a, b) => (a.points < b.points) ? 1 : (a.points === b.points) ? ((a.differential < b.differential) ? 1 : -1) : -1 )
+    teams.sort((a, b) => (a.points < b.points) ? 1 : (a.points === b.points) ? ((a.differential < b.differential) ? 1 : -1) : -1 );
     return teams;
 }
 
