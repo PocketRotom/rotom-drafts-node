@@ -35,4 +35,20 @@ module.exports = {
             })
         }
     },
+    verify: async (req, res) => {
+        try {
+            let token = req.body.token;
+
+            let data = await Auth.verify(token);
+            return res.status(200).json({
+                success: true,
+                data: data
+            });
+        } catch (err) {
+            return res.status(500).json({
+                success: false,
+                error: err
+            })
+        }
+    },
 }

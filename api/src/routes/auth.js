@@ -8,5 +8,8 @@ router.get('/signup', auth.signup);
 // base_url/auth/login
 router.get('/login', auth.login);
 
+// base_url/auth/verify
+router.get('/verify', auth.verify);
+
 
 module.exports = router;
