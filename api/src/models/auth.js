@@ -1,5 +1,6 @@
 const { connectDatabase } = require('../utils/database');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 async function signup(username, password, email, discord) {
 
@@ -56,7 +57,12 @@ async function login(username, password) {
     delete userFinal.password;
     delete userFinal.email;
 
-    return userFinal;
+    let token = jwt.sign({
+        data: userFinal
+      }, 'secret', { expiresIn: 60*60*24 });
+       
+
+    return token;
 }
 
 
