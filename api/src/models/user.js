@@ -8,7 +8,7 @@ async function getAll() {
 
 async function getByID(id) {
     const knex = await connectDatabase();
-    let user = knex.select("*").from('users').where({
+    let user = knex.select("userID", "username", "discordTag").from('users').where({
         userID: id
     });
     return user;
@@ -16,7 +16,7 @@ async function getByID(id) {
 
 async function getByUsername(username) {
     const knex = await connectDatabase();
-    let user = knex.select("*").from('users').where({
+    let user = knex.select("userID", "discordTag").from('users').where({
         username: username
     });
     return user;

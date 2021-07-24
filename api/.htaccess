@@ -1,0 +1,347 @@
+RewriteOptions inherit
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# BEGIN SSL Redirect
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# END SSL REDIRECT
+
+# PREVENT USERNAME ENUMERATION
+# When a visitor enters your-site.com/?author=1 into their address bar, they’re directed to the author’s page that has a user ID of one. If a hacker is able to easily get a hold of your username, it’s one less thing they need to guess. In fact, the only other detail they need to guess is your password.
+RewriteCond %{QUERY_STRING} author=d
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^ /? [L,R=301]
+
+# BLOCK ACESS TO WP-INCLUDES DIRECTORY
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule !^wp-includes/ - [S=3]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
+
+# PROTECT HTACESS
+# Stops anyone viewing any file on your site that begins with "hta"
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+</Files>
+
+# BLOCK CHANGING WordPress GLOBALS and _REQUEST variables in an attempt to inject malicious code
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{QUERY_STRING} (<|%3C).*script.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|[|%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|[|%[0-9A-Z]{0,2})
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ index.php [F,L]
+
+# RESTRICT ACCESS TO PHP FILES
+# Block direct access to your plugin and theme’s PHP files from unauthorized users
+RewriteCond %{REQUEST_URI} !^/wp-content/plugins/file/to/exclude\.php
+RewriteCond %{REQUEST_URI} !^/wp-content/plugins/directory/to/exclude/
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule wp-content/plugins/(.*\.php)$ - [R=404,L]
+RewriteCond %{REQUEST_URI} !^/wp-content/themes/file/to/exclude\.php
+RewriteCond %{REQUEST_URI} !^/wp-content/themes/directory/to/exclude/
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule wp-content/themes/(.*\.php)$ - [R=404,L]
+
+# NO DIRECTORY BROWSING
+Options All -Indexes
+
+# PROTECT WP-CONFIG, ERROR LOGS AND PHP.ini
+# Be sure to check your files and see if you have one named php.ini because you may not. Instead, you may have one called php5.ini. If this is the case, replace php.ini with php5.ini in the above rule.
+<FilesMatch "^.*(error_log|wp-config\.php|php.ini|\.[hH][tT][aApP].*)$">
+Order deny,allow
+Deny from all
+</FilesMatch>
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+deny from 37.112.103.94
+deny from 212.1.109.64
+deny from 188.12.19.209
+deny from 85.172.10.51
+deny from 62.165.44.127
+deny from 92.100.228.166
+deny from 195.144.220.100
+deny from 94.154.220.145
+deny from 79.17.249.100
+deny from 195.19.215.92
+deny from 46.236.143.40
+deny from 5.18.99.4
+deny from 142.54.177.2
+deny from 94.139.226.248
+deny from 80.95.44.250
+deny from 46.50.236.247
+deny from 91.205.238.21
+deny from 82.160.125.169
+deny from 31.173.100.206
+deny from 84.18.126.16
+deny from 188.162.132.27
+deny from 87.249.2.110
+deny from 89.105.144.182
+deny from 178.5.231.146
+deny from 178.76.241.131
+deny from 46.173.68.254
+deny from 94.41.244.220
+deny from 91.215.123.32
+deny from 94.51.77.239
+deny from 5.141.201.102
+deny from 78.36.139.233
+deny from 88.201.171.160
+deny from 91.210.150.108
+deny from 89.22.52.1
+deny from 77.40.61.9
+deny from 95.26.45.28
+deny from 37.146.17.41
+deny from 5.227.7.7
+deny from 85.140.4.29
+deny from 5.44.169.42
+deny from 37.146.75.3
+deny from 31.8.105.131
+deny from 82.112.58.25
+deny from 31.47.153.51
+deny from 109.110.69.3
+deny from 178.5.89.20
+deny from 85.94.0.115
+deny from 91.103.75.34
+deny from 31.211.16.51
+deny from 37.147.98.34
+deny from 84.42.19.172
+deny from 178.36.28.77
+deny from 81.23.107.110
+deny from 95.84.37.105
+deny from 176.59.16.72
+deny from 188.17.117.2
+deny from 89.175.20.43
+deny from 95.80.108.45
+deny from 77.52.196.6
+deny from 188.19.85.44
+deny from 90.17.123.106
+deny from 86.57.181.22
+deny from 85.140.3.122
+deny from 94.29.126.106
+deny from 46.167.88.55
+deny from 91.76.161.29
+deny from 185.3.35.136
+deny from 94.188.75.2
+deny from 95.79.185.4
+deny from 46.61.242.15
+deny from 92.54.78.143
+deny from 185.29.84.73
+deny from 46.173.78.76
+deny from 176.36.35.127
+deny from 93.74.194.16
+deny from 77.82.213.6
+deny from 93.94.156.42
+deny from 37.193.7.149
+deny from 79.120.76.114
+deny from 85.140.1.163
+deny from 46.148.194.2
+deny from 217.112.29.35
+deny from 46.147.4.196
+deny from 176.59.46.114
+deny from 88.135.63.110
+deny from 85.140.1.177
+deny from 85.95.185.42
+deny from 46.73.137.154
+deny from 79.104.200.27
+deny from 85.94.20.211
+deny from 94.45.169.104
+deny from 84.47.136.146
+deny from 84.47.161.121
+deny from 176.112.41.87
+deny from 194.54.160.10
+deny from 194.165.19.41
+deny from 194.15.117.94
+deny from 5.164.232.21
+deny from 77.222.105.24
+deny from 176.101.61.91
+deny from 82.138.14.196
+deny from 81.162.64.127
+deny from 81.203.113.37
+deny from 91.198.149.2
+deny from 109.127.191.15
+deny from 77.232.48.86
+deny from 178.155.54.57
+deny from 37.52.202.154
+deny from 94.79.47.226
+deny from 91.223.48.86
+deny from 145.255.1.48
+deny from 176.14.129.135
+deny from 91.196.98.71
+deny from 46.173.70.168
+deny from 31.173.63.193
+deny from 95.215.67.84
+deny from 109.172.47.135
+deny from 178.214.34.38
+deny from 95.84.196.89
+deny from 31.47.160.230
+deny from 89.255.92.36
+deny from 109.172.46.146
+deny from 94.139.238.4
+deny from 46.181.230.19
+deny from 62.140.244.30
+deny from 89.242.12.136
+deny from 178.184.2.119
+deny from 83.149.21.231
+deny from 92.50.223.125
+deny from 46.147.122.176
+deny from 94.45.214.140
+deny from 37.113.167.178
+deny from 178.216.78.25
+deny from 31.173.103.190
+deny from 178.184.52.84
+deny from 188.170.72.68
+deny from 93.174.224.11
+deny from 176.215.10.102
+deny from 188.162.36.117
+deny from 87.255.13.148
+deny from 77.73.111.254
+deny from 85.175.46.210
+deny from 92.243.183.4
+deny from 89.169.196.69
+deny from 178.205.140.1
+deny from 46.237.21.223
+deny from 109.195.81.143
+deny from 91.197.11.229
+deny from 94.25.181.231
+deny from 94.25.182.230
+deny from 176.196.33.131
+deny from 46.242.46.204
+deny from 83.219.143.93
+deny from 217.147.21.158
+deny from 185.63.218.79
+deny from 37.193.122.194
+deny from 213.87.130.117
+deny from 212.106.39.192
+deny from 91.240.208.14
+deny from 188.18.112.241
+deny from 87.255.28.190
+deny from 37.110.246.169
+deny from 77.239.201.47
+deny from 89.178.89.209
+deny from 85.234.37.212
+deny from 109.188.72.201
+deny from 83.221.223.43
+deny from 109.170.94.199
+deny from 91.206.63.212
+deny from 178.216.77.103
+deny from 195.189.17.173
+deny from 90.192.67.227
+deny from 195.94.238.50
+deny from 95.52.181.250
+deny from 213.79.122.165
+deny from 62.183.124.218
+deny from 91.205.144.148
+deny from 83.69.213.227
+deny from 178.217.180.18
+deny from 109.252.68.175
+deny from 91.105.172.236
+deny from 92.255.243.14
+deny from 95.78.232.201
+deny from 89.250.174.93
+deny from 93.159.238.120
+deny from 91.225.76.220
+deny from 80.251.152.134
+deny from 94.241.59.223
+deny from 46.254.217.104
+deny from 194.187.149.95
+deny from 91.144.156.238
+deny from 91.243.105.193
+deny from 31.135.244.228
+deny from 188.162.167.126
+deny from 188.170.80.206
+deny from 178.205.62.208
+deny from 178.129.101.249
+deny from 188.244.5.224
+deny from 195.54.210.205
+deny from 89.148.233.201
+deny from 91.234.153.194
+deny from 95.191.219.167
+deny from 77.235.218.164
+deny from 185.124.190.198
+deny from 188.170.196.145
+deny from 178.212.101.212
+deny from 188.243.110.164
+deny from 176.107.223.201
+deny from 194.135.211.170
+deny from 46.252.245.170
+deny from 87.249.198.182
+deny from 88.200.215.220
+deny from 141.101.234.250
+deny from 188.170.194.202
+deny from 195.208.151.224
+deny from 213.87.249.229
+deny from 193.252.209.184
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^pokedex\/\/?(.*)$ "https\:\/\/pokedex\.pocketrotom\.pt\/$1" [R=301,L]
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^pokedex\/?(.*)$ "https\:\/\/pokedex\.pocketrotom\.pt\/$1" [R=301,L]

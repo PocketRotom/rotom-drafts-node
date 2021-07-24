@@ -3,6 +3,8 @@ const router = express.Router();
 const leagues = require("../controllers/league.js");
 const divisions = require("./divisions");
 const teams = require("./teams");
+const matches = require("./matches");
+const tierlist = require("./tierlist");
 
 // base_url/leagues
 router.get('', leagues.findAll);
@@ -16,6 +18,12 @@ router.get('/:leagueID/admins', leagues.getAdmins);
 // base_url/leagues/id/admins
 router.post('/:leagueID/admins', leagues.addAdmin);
 
+// base_url/leagues/id/nonAdmins
+router.get('/:leagueID/nonAdmins', leagues.nonAdmins);
+
+// base_url/leagues/id/signups
+router.put('/:leagueID/signups', leagues.updateSignups);
+
 // base_url/leagues
 router.post('', leagues.createLeague);
 
@@ -24,6 +32,10 @@ router.post('', leagues.createLeague);
 router.use('/:leagueID/teams', teams);
 
 router.use('/:leagueID/divisions', divisions);
+
+router.use('/:leagueID/matches', matches);
+
+router.use('/:leagueID/tierlist', tierlist);
 
 
 module.exports = router;

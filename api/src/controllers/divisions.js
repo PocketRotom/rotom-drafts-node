@@ -25,7 +25,6 @@ module.exports = {
                 data: teams
             });
         } catch (err) {
-            console.log(err);
             return res.status(500).json({
                 success: false,
                 error: "Server Error!"
@@ -42,7 +41,6 @@ module.exports = {
                 data: teams
             });
         } catch (err) {
-            //console.log(err);
             return res.status(500).json({
                 success: false,
                 error: "Server Error!"

@@ -88,11 +88,44 @@ module.exports = {
             });
 
         } catch (error) {
-            console.log(error);
             return res.status(500).json({
                 success: false,
                 error: "Server Error!"
             })
         }
-    }
+    },
+    nonAdmins: async (req, res) =>{
+        try {
+            let leagueID = req.params.leagueID;
+
+            let nonAdmins = await League.getNonAdmins(leagueID);
+            return res.status(200).json({
+                success: true,
+                count: nonAdmins.length,
+                data: nonAdmins
+            });
+            
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
+    updateSignups: async (req, res) => {
+        try {
+            let leagueID = req.params.leagueID;
+            let signups = req.body.signups;
+
+            let update = await League.updateSignups(leagueID, signups);
+            return res.status(200).json({
+                success: true
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
 }

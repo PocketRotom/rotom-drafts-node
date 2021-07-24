@@ -85,4 +85,4 @@ async function getNonAdmins(leagueID) {
 
 
 
-module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins, updateSignups, getNonAdmins, getTeams};
+module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins, updateSignups, getNonAdmins};

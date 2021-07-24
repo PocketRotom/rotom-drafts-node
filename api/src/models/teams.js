@@ -47,5 +47,15 @@ async function signUpTeam(teamName, userID, leagueID) {
     return result;
 }
 
+async function getTeams(leagueID) {
+    const knex = await connectDatabase();
 
-module.exports = { signUpTeam };
+    let teams = knex("team").select("*").where({
+        idLeague: leagueID
+    });
+
+    return teams;
+}
+
+
+module.exports = { signUpTeam, getTeams };
