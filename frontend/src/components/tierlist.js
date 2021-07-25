@@ -33,7 +33,7 @@ class Tierlist extends React.Component {
         }
         let tierlist;
 
-        await axios.get(`http://localhost:3001/leagues/${id}/tierlist`).then((response) => {
+        await axios.get(`${sessionStorage.getItem("apiURL")}/leagues/${id}/tierlist`).then((response) => {
             tierlist = response.data.data;
         })
         tierlist = orderBy(tierlist, 'tier');
@@ -54,12 +54,15 @@ class Tierlist extends React.Component {
 
     getTierlistHTML() {
         let tierlistHTML = [];
-        this.state.tierlist.forEach(tier => {
+        this.state.tierlist.forEach( (tier, index) => {
+            if (tier == undefined) {
+                tier = [index, []];
+            }
             let pokemons = [];
             tier[1].forEach(pokemon => {
                 pokemons.push((
                     <tr key={pokemon.idPokemon}>
-                        <th className="row"> <img src={"/images/pokemon/" + pokemon.idPokemon + ".png"} className="img-fluid" style={{ width: "50%" }} /> {pokemon.name} </th>
+                        <th className="row"> <img src={sessionStorage.getItem("apiURL") + "/public/images/pokemon/" + pokemon.idPokemon + ".png"} className="img-fluid" style={{ width: "50%" }} /> {pokemon.name} </th>
                         <td>
                             <p style={{textTransform: "capitalize"}}> {pokemon.tier} </p>
                         </td>
@@ -68,7 +71,7 @@ class Tierlist extends React.Component {
             });
 
             tierlistHTML.push((
-                <div className="col-md-1" key={tier[1][0].tier}>
+                <div className="col-md-1" key={tier[0].tier}>
                     <table className="table">
                         <thead>
                             <tr>

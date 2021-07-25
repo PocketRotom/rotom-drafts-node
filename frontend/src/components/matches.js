@@ -33,7 +33,7 @@ class Matches extends React.Component {
         }
         let matches;
 
-        await axios.get(`http://localhost:3001/leagues/${id}/matches`).then((response) => {
+        await axios.get(`${sessionStorage.getItem("apiURL")}/leagues/${id}/matches`).then((response) => {
             matches = response.data.data;
         })
 
@@ -86,7 +86,7 @@ class Matches extends React.Component {
                 } else {
                     played = (
                         <div className="card-footer text-muted">
-                            <a className="btn btn-primary" href={"/league/submitresult?matchID=" + match.idMatch}>Submit Score</a>
+                            <a className="btn btn-primary" href={"/league/submitresult/" + match.idMatch}>Submit Score</a>
                         </div>
                     );
                 }
@@ -105,7 +105,7 @@ class Matches extends React.Component {
                             {match.team1Name} vs {match.team1Name}
                         </div>
                         <div className="card-body">
-                            <p className="card-text"><img src={"/images/teams/" + match.idTeam1 + ".png"} className="img-fluid" width="50" /> VS <img src={"/images/teams/" + match.idTeam2 + ".png"} className="img-fluid" width="50" /></p>
+                            <p className="card-text"><img src={sessionStorage.getItem("apiURL") + "/public/images/teams/" + match.idTeam1 + ".png"} className="img-fluid" width="50" /> VS <img src={sessionStorage.getItem("apiURL") + "/public/images/teams/" + match.idTeam2 + ".png"} className="img-fluid" width="50" /></p>
                         </div>
                         {played}
                         {stream}

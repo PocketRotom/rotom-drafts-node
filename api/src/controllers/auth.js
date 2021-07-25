@@ -8,8 +8,14 @@ module.exports = {
             let email = req.body.email;
             let discord = req.body.discord;
             let auth = await Auth.signup(username, password, email, discord);
+            if (auth == "Username already exists" || auth == "Email already exists" || auth == "Password is too small") {
+                return res.status(200).json({
+                    success: false,
+                    error: auth
+                });
+            }
             return res.status(200).json({
-                success: true,
+                success: true
             });
         } catch (err) {
             return res.status(500).json({
@@ -20,10 +26,17 @@ module.exports = {
     },
     login: async (req, res) => {
         try {
+            console.log(req.body);
             let username = req.body.username;
             let password = req.body.password;
 
             let auth = await Auth.login(username, password);
+            if (auth == "Username is wrong" || auth == "Wrong password") {
+                return res.status(200).json({
+                    success: false,
+                    error: auth
+                });
+            }
             return res.status(200).json({
                 success: true,
                 data: auth

@@ -3,6 +3,8 @@ import axios from "axios";
 import {withRouter} from "react-router-dom";
 import checkIfLeagueExists from "../utils/checkIfLeagueExists";
 
+import checkToken from "../utils/checkToken";
+
 
 class League extends React.Component {
 
@@ -12,7 +14,8 @@ class League extends React.Component {
         this.state = {
             'divisions': [],
             'isLoaded': false,
-            'exists': true
+            'exists': true,
+            'admin': false
         }
     };
 
@@ -21,6 +24,7 @@ class League extends React.Component {
     componentDidMount() {
         const id = this.props.match.params.id;
         this.getDivisions(id);
+        this.checkIfAdmin();
     }
 
     async getDivisions(id) {
@@ -32,7 +36,7 @@ class League extends React.Component {
         }
         let divisions;
 
-        await axios.get(`http://localhost:3001/leagues/${id}/divisions`).then((response) => {
+        await axios.get(`${sessionStorage.getItem("apiURL")}/leagues/${id}/divisions`).then((response) => {
             divisions = response.data.data;
         })
 
@@ -56,10 +60,31 @@ class League extends React.Component {
     
 
     async getTeamsByDivision(leagueID, divisionID, index, divisions) {
-        await axios.get(`http://localhost:3001/leagues/${leagueID}/divisions/${divisionID}`).then((response) => {
+        await axios.get(`${sessionStorage.getItem("apiURL")}/leagues/${leagueID}/divisions/${divisionID}`).then((response) => {
             divisions[index].teams = response.data.data;
         });
         return divisions;
+    }
+
+    async checkIfAdmin() {
+        let loggedIn = await checkToken();
+        if (loggedIn) {
+            let userData = JSON.parse(sessionStorage.getItem("userData"));
+
+            let admins;
+
+            await axios.get(`${sessionStorage.getItem("apiURL")}/leagues/${this.props.match.params.id}/admins`).then((response) => {
+                admins = response.data.data;
+            });
+
+            admins.forEach(admin => {
+                if (admin.idUser == userData.userID) {
+                    this.setState({ admin: true });
+                }
+            });
+        }
+
+
     }
 
     getDivisionsHTML() {
@@ -78,7 +103,7 @@ class League extends React.Component {
                         <tr key={indexTeam}>
                             <td>{indexTeam + 1}</td>
                             <td>{team.teamName}</td>
-                            <td><img src={"/images/teams/" + team.idTeam + ".png"} className="img-fluid" width="70"></img></td>
+                            <td><img src={sessionStorage.getItem("apiURL") + "/public/images/teams/" + team.idTeam + ".png"} className="img-fluid" width="70"></img></td>
                             <td>{team.wins}</td>
                             <td>{team.losses}</td>
                             <td>{team.differential}</td>
@@ -123,9 +148,15 @@ class League extends React.Component {
             return <div>Loading</div>;
         } else {
             if (this.state.divisions.length < 1) {
-                leagues = (
-                    <div><h1 style={{ textAlign: "center" }}>This League has no Divisions</h1>
-                        <h2 style={{ textAlign: "center" }}>You can add one <a href="/division/add">here</a></h2></div>);
+                if (this.state.admin) {
+                    leagues = (
+                        <div><h1 style={{ textAlign: "center" }}>This League has no Divisions</h1>
+                            <h2 style={{ textAlign: "center" }}>You can add one <a href="/division/add">here</a></h2></div>);
+                } else {
+                    leagues = (
+                        <div><h1 style={{ textAlign: "center" }}>This League has no Divisions</h1></div>);
+                }
+                
             } else {
                 leagues = this.getDivisionsHTML();
             }

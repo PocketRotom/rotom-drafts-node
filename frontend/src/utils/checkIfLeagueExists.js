@@ -2,7 +2,7 @@ import axios from "axios";
 
 async function checkIfLeagueExists(id){
     let leagues;
-    await axios.get('http://localhost:3001/leagues/').then((response) => {
+    await axios.get(`${sessionStorage.getItem("apiURL")}/leagues/`).then((response) => {
         leagues = response.data.data;
     });
     

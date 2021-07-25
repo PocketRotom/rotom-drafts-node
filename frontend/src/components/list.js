@@ -19,7 +19,7 @@ class List extends React.Component {
 
 
     getLeagues() {
-        axios.get('http://localhost:3001/leagues/').then((response) => {
+        axios.get(`${sessionStorage.getItem("apiURL")}/leagues/`).then((response) => {
             response.data.data.forEach(league => {
                 if (league.playersCount == null) {
                     league.playersCount = 0;
@@ -33,20 +33,19 @@ class List extends React.Component {
     getHTML(leagues) {
         let leaguesHTML = [];
         leagues.forEach(league => {
-            let format = "Singles"
-            if (league.doublesSingles == 2) {
+            let format = "Singles";
+            if (league.format == 2) {
                 format = "Doubles";
             }
             let signUpsOpen = 'Signups Closed'
             if (league.signUpsOpen == 1) {
-                signUpsOpen = <a href={"/league/signup?leagueId=" + league.idLeague}>Register</a>;
+                signUpsOpen = <a href={"/league/signup/" + league.idLeague}>Register</a>;
             }
             leaguesHTML.push((
                 <tr key={league.idLeague}><td><a href={"/league/" + league.idLeague}>{league.name}</a></td>
-                <td><a href={"/league/" + league.idLeague}><img src={"/images/leagues/" + league.idLeague + ".png"} className="img-fluid" width="70"></img></a></td>
+                <td><a href={"/league/" + league.idLeague}><img src={sessionStorage.getItem("apiURL") + "/public/images/leagues/" + league.idLeague + ".png"} className="img-fluid" width="70"></img></a></td>
                 <td>{format}</td><td>{signUpsOpen}</td>
                 <td>{league.playersCount}/{league.maxNumberOfCoaches}</td></tr>));
-            console.log(leaguesHTML);
         });
         
         return leaguesHTML;

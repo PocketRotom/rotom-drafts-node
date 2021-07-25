@@ -33,12 +33,26 @@ module.exports = {
     },
     getTeamsWithNoDivision: async (req, res) => {
         try {
-            console.log(req.params);
             let teams = await Divisions.getTeamsWithNoDivision(req.params.leagueID);
             return res.status(200).json({
                 success: true,
                 count: teams.length,
                 data: teams
+            });
+        } catch (err) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
+    createDivision: async (req, res) => {
+        try {
+            let name = req.body.name;
+            let division = await Divisions.createDivision(req.params.leagueID, name);
+            return res.status(200).json({
+                success: true,
+                data: division
             });
         } catch (err) {
             return res.status(500).json({

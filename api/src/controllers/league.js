@@ -128,4 +128,43 @@ module.exports = {
             })
         }
     },
+    update: async (req, res) => {
+        try {
+            let leagueID = req.params.leagueID;
+            let signups = req.body.signups;
+            let newName = req.body.name;
+            let newAdmin = req.body.admin;
+            
+
+            let update = await League.update(leagueID, signups, newName, newAdmin);
+            if (newAdmin != undefined) {
+                let admin = await League.addAdmin(leagueID, newAdmin);
+            }
+            return res.status(200).json({
+                success: true
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
+    alreadySignedUp: async (req, res) => {
+        try {
+            let leagueID = req.params.leagueID;
+            let userID = req.body.userID;
+
+            let check = await League.checkSignedUp(leagueID, userID);
+            return res.status(200).json({
+                success: true,
+                data: check
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: "Server Error!"
+            })
+        }
+    },
 }

@@ -31,7 +31,6 @@ async function signUpTeam(teamName, userID, leagueID) {
         throw "You've already signed up for this league";
     }
 
-
     //Close Signups if reaches max Players
     if (signedUpPlayers >= maxPlayers) {
         knex('league').where('idLeague', '=', leagueID).update({

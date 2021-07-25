@@ -24,6 +24,12 @@ router.get('/:leagueID/nonAdmins', leagues.nonAdmins);
 // base_url/leagues/id/signups
 router.put('/:leagueID/signups', leagues.updateSignups);
 
+// base_url/leagues/id/alreaduSignedUp
+router.post('/:leagueID/alreadySignedUp', leagues.alreadySignedUp);
+
+// base_url/leagues/id/update
+router.put('/:leagueID/update', leagues.update);
+
 // base_url/leagues
 router.post('', leagues.createLeague);
 

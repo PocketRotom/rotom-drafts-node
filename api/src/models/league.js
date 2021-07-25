@@ -67,6 +67,20 @@ async function updateSignups(leagueID, signups) {
 
 }
 
+async function update(leagueID, signups, newName) {
+    const knex = await connectDatabase();
+
+    let edited = knex("league").where({
+        idLeague: leagueID,
+    }).update({
+        signUpsOpen: signups,
+        name: newName
+    });
+
+    return edited;
+
+}
+
 async function getNonAdmins(leagueID) {
     const knex = await connectDatabase();
     // SELECT DISTINCT users.userID, users.username
@@ -81,8 +95,19 @@ async function getNonAdmins(leagueID) {
     return nonAdmins;
 }
 
+async function checkSignedUp(leagueID, userID) {
+    const knex = await connectDatabase();
+
+    let check = knex('team').select("*").where({
+        idLeague: leagueID,
+        coachID: userID
+    });
+
+    return check;
+}
 
 
 
 
-module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins, updateSignups, getNonAdmins};
+
+module.exports = {getAll, getByID, createLeague, addAdmin, getAdmins, updateSignups, getNonAdmins, checkSignedUp, update};

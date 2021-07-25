@@ -9,22 +9,33 @@ async function signup(username, password, email, discord) {
 
     let users = await knex.select("username").from('users');
 
+    let usernameFinal;
+
     users.forEach(user => {
         if (user.username == username) {
-            throw "Username already exists";
+            usernameFinal = user.username;
         }
-    }); 
+    });
+
+    if (usernameFinal != undefined) {
+        return "Username already exists";
+    }
 
     let emails = await knex.select("email").from('users');
 
+    let emailFinal;
+
     emails.forEach(user => {
         if (user.email == email) {
-            throw "Email already exists";
+            emailFinal = user.email;
         }
-    }); 
+    });
+    if (emailFinal != undefined) {
+        return "Email already exists";
+    }
 
     if (password.length < 4) {
-        throw "Password is too small";
+        return "Password is too small";
     }
     
     let passCrypt = await bcrypt.hash(password, 10);
@@ -48,11 +59,11 @@ async function login(username, password) {
         }
     });
     if (userFinal == undefined) {
-        throw "Username is wrong";
+        return "Username is wrong";
     }
 
     if (!(await bcrypt.compare(password, userFinal.password))){
-        throw "Wrong password";
+        return "Wrong password";
     }
 
     delete userFinal.password;

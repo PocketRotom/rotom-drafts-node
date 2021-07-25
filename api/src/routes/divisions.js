@@ -11,4 +11,7 @@ router.get('/noDivision', divisions.getTeamsWithNoDivision);
 // base_url/leagues/leagueID/divisions/divisionID
 router.get('/:divisionID', divisions.getTeams);
 
+// base_url/leagues/leagueID/divisions/
+router.post('', divisions.createDivision);
+
 module.exports = router;

@@ -32,5 +32,17 @@ async function getTeamsWithNoDivision(leagueID) {
 
 }
 
+async function createDivision(leagueID, name) {
+    const knex = await connectDatabase();
 
-module.exports = { getAll, getTeamsByDivision, getTeamsWithNoDivision };
+    let division = knex('division').insert({
+        name: name,
+        idLeague: leagueID
+    })
+
+    return division;
+
+}
+
+
+module.exports = { getAll, getTeamsByDivision, getTeamsWithNoDivision, createDivision };
