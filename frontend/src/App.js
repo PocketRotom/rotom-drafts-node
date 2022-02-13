@@ -16,6 +16,7 @@ import Header from './components/header';
 import List from './components/list';
 import League from './components/league';
 import Matches from './components/matches';
+import Team from './components/team';
 import Tierlist from './components/tierlist';
 import SubHeader from './components/subHeader';
 import Login from './components/login';
@@ -69,6 +70,10 @@ function App() {
 function LeagueRouter() {
     let match = useRouteMatch();
     return (<Switch>
+        <Route path={`${match.path}/:id/team/:idTeam`}>
+            <SubHeader />
+            <Team />
+        </Route>
         <Route path={`${match.path}/add`}>
             <AddLeague />
         </Route>
