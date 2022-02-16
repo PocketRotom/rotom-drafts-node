@@ -95,5 +95,23 @@ module.exports = {
                 error: error
             })
         }
-    }
+    },
+    setTier: async (req, res) => {
+        try {
+            let pokemonID = req.body.pokemonID;
+            let tier = req.body.tier;
+
+            let pokemon = await Pokemon.setTier(pokemonID, tier);
+            return res.status(200).json({
+                success: true,
+                //count: teams.length,
+                data: pokemon
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: error
+            })
+        }
+    },
 }

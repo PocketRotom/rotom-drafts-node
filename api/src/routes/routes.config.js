@@ -21,4 +21,6 @@ router.put('/pokemon/ban', pokemon.ban);
 
 router.get('/pokemon/isFree', pokemon.isFree);
 
+router.put('/pokemon/setTier', pokemon.setTier);
+
 module.exports = router;

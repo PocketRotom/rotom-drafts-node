@@ -38,6 +38,18 @@ async function ban(pokemonID){
     return pokemon;
 }
 
+async function setTier(pokemonID, tier){
+    const knex = await connectDatabase();
+
+    let pokemon = knex("pokemon")
+    .where({idPokemon: pokemonID})
+    .update({
+        tier: tier
+    })
+
+    return pokemon;
+}
+
 async function isFree(pokemonID){
     const knex = await connectDatabase();
 
@@ -64,4 +76,4 @@ async function isFree(pokemonID){
 
 
 
-module.exports = { getPokemons, getPokemonByTier, draft, ban, isFree };
+module.exports = { getPokemons, getPokemonByTier, draft, ban, isFree, setTier };
