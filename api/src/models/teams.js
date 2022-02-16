@@ -42,7 +42,7 @@ async function getDrafted(){
 
     let team = knex("teamdraft")
     .select("teamdraft.idTeam", "teamdraft.idPokemon", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
-    .rightJoin('team', 'teamdraft.idTeam', 'team.idTeam')
+    .leftJoin('team', 'teamdraft.idTeam', 'team.idTeam')
     .leftJoin('pokemon', 'teamdraft.idPokemon', 'pokemon.idPokemon');
 
     return team;
