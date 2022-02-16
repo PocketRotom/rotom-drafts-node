@@ -20,7 +20,7 @@ module.exports = {
     },
     getTeamDraft: async (req, res) => {
         try {
-            let teamID = req.body.teamID;
+            let teamID = req.params.teamID;
 
             let team = await Teams.getTeamDraft(teamID);
             return res.status(200).json({
@@ -37,7 +37,7 @@ module.exports = {
     },
     getTeam: async (req, res) => {
         try {
-            let teamID = req.body.teamID;
+            let teamID = req.params.teamID;
 
             let team = await Teams.getTeam(teamID);
             return res.status(200).json({
