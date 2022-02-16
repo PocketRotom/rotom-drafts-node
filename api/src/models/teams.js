@@ -49,4 +49,4 @@ async function getDrafted(){
 }
 
 
-module.exports = { signUpTeam, getTeams, getTeamDraft, getTeam, addPokemon, getDrafted };
+module.exports = {getTeams, getTeamDraft, getTeam, addPokemon, getDrafted };
