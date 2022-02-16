@@ -15,7 +15,7 @@ module.exports = {
                     afterCreate: function (conn, done) {
                         // in this example we use pg driver's connection API
                         // Query to test
-                        conn.query('SET time_zone="UTC";', function (err) {
+                        conn.query('SET time_zone="+00:00";', function (err) {
                             if (err) {
                                 console.log(err);
                                 done(err, conn);

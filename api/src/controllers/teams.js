@@ -1,33 +1,11 @@
 const Teams = require("../models/teams.js");
 
 module.exports = {
-    signUpTeam: async (req, res) => {
-        try {
-
-            let teamName = req.body.teamName;
-            let userID = req.body.userID;
-            let idLeague = req.params.leagueID;
-
-            
-            let teams = await Teams.signUpTeam(teamName, userID, idLeague);
-
-            return res.status(200).json({
-                success: true,
-                //count: teams.length,
-                data: teams
-            });
-        } catch (err) {
-            return res.status(500).json({
-                success: false,
-                error: err
-            })
-        }
-    },
     getAllTeams: async (req, res) => {
         try {
-            let leagueID = req.params.leagueID;
+            //let leagueID = req.params.leagueID;
 
-            let teams = await Teams.getTeams(leagueID);
+            let teams = await Teams.getTeams();
             return res.status(200).json({
                 success: true,
                 count: teams.length,
@@ -36,13 +14,13 @@ module.exports = {
         } catch (error) {
             return res.status(500).json({
                 success: false,
-                error: "Server Error!"
+                error: error
             })
         }
     },
     getTeamDraft: async (req, res) => {
         try {
-            let teamID = req.params.teamID;
+            let teamID = req.body.teamID;
 
             let team = await Teams.getTeamDraft(teamID);
             return res.status(200).json({
@@ -59,7 +37,7 @@ module.exports = {
     },
     getTeam: async (req, res) => {
         try {
-            let teamID = req.params.teamID;
+            let teamID = req.body.teamID;
 
             let team = await Teams.getTeam(teamID);
             return res.status(200).json({
@@ -74,17 +52,14 @@ module.exports = {
             })
         }
     },
-    addPokemon: async (req, res) => {
+    getDrafted: async (req, res) => {
         try {
-            let teamID = req.body.teamID;
-            //let teamID = 27;
-            let pokemonID = req.body.pokemonID;
 
-            let pokemon = await Teams.addPokemon(teamID, pokemonID);
+            let team = await Teams.getDrafted();
             return res.status(200).json({
                 success: true,
-                //count: teams.length,
-                data: pokemon
+                count: team.length,
+                data: team
             });
         } catch (error) {
             return res.status(500).json({
@@ -92,5 +67,6 @@ module.exports = {
                 error: error
             })
         }
-    }
+    },
+    
 }

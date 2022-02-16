@@ -46,12 +46,10 @@ async function signUpTeam(teamName, userID, leagueID) {
     return result;
 }
 
-async function getTeams(leagueID) {
+async function getTeams() {
     const knex = await connectDatabase();
 
-    let teams = knex("team").select("*").where({
-        idLeague: leagueID
-    });
+    let teams = knex("team").select("*");
 
     return teams;
 }
@@ -85,5 +83,16 @@ async function addPokemon(teamID, pokemonID){
     return pokemon;
 }
 
+async function getDrafted(){
+    const knex = await connectDatabase();
 
-module.exports = { signUpTeam, getTeams, getTeamDraft, getTeam, addPokemon };
+    let team = knex("teamdraft")
+    .select("teamdraft.idTeam", "teamdraft.idPokemon", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
+    .rightJoin('team', 'teamdraft.idTeam', 'team.idTeam')
+    .leftJoin('pokemon', 'teamdraft.idPokemon', 'pokemon.idPokemon');
+
+    return team;
+}
+
+
+module.exports = { signUpTeam, getTeams, getTeamDraft, getTeam, addPokemon, getDrafted };

@@ -1,20 +1,24 @@
 const express = require("express");
 const router = express.Router();
-const users = require('./user');
-const leagues = require('./league');
-const auth = require('./auth');
-const uploadTeams = require('./uploadTeams');
-const uploadLeagues = require('./uploadLeagues.js');
 const teams = require("../controllers/teams.js");
+const pokemon = require("../controllers/pokemon.js");
 
-router.use('/users', users);
-router.use('/leagues', leagues);
-router.use('/auth', auth);
+router.get('/allTeams', teams.getAllTeams);
 
-router.use('/upload/teams', uploadTeams);
-router.use('/upload/leagues', uploadLeagues);
+router.get('/team', teams.getTeam);
 
-router.put('/addPokemon', teams.addPokemon);
+router.get('/teamDraft', teams.getTeamDraft);
 
+router.get('/drafted', teams.getDrafted);
+
+router.get('/pokemons', pokemon.getPokemons);
+
+router.get('/pokemon/byTier', pokemon.getPokemonByTier);
+
+router.post('/draft', pokemon.draft);
+
+router.put('/pokemon/ban', pokemon.ban);
+
+router.get('/pokemon/isFree', pokemon.isFree);
 
 module.exports = router;

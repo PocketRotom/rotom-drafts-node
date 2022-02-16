@@ -12,8 +12,6 @@ if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
-
-
 const routes = require('./src/routes/routes.config');
 
 app.use(cors())
