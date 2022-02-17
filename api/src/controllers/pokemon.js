@@ -3,7 +3,7 @@ const Pokemon = require("../models/pokemon.js");
 module.exports = {
     getPokemons: async (req, res) => {
         try {
-            //let leagueID = req.params.leagueID;
+            //let leagueID = req.query.leagueID;
 
             let pokemons = await Pokemon.getPokemons();
             return res.status(200).json({
@@ -20,7 +20,7 @@ module.exports = {
     },
     getPokemonByTier: async (req, res) => {
         try {
-            let tier = req.params.tier;
+            let tier = req.query.tier;
 
             let pokemons = await Pokemon.getPokemonByTier(tier);
             return res.status(200).json({
@@ -37,9 +37,9 @@ module.exports = {
     },
     draft: async (req, res) => {
         try {
-            let teamID = req.params.teamID;
+            let teamID = req.query.teamID;
             //let teamID = 27;
-            let pokemonID = req.params.pokemonID;
+            let pokemonID = req.query.pokemonID;
 
             let pokemon = await Pokemon.draft(teamID, pokemonID);
             return res.status(200).json({
@@ -64,7 +64,7 @@ module.exports = {
         try {
             //let teamID = req.body.teamID;
             //let teamID = 27;
-            let pokemonID = req.params.pokemonID;
+            let pokemonID = req.query.pokemonID;
 
             let pokemon = await Pokemon.ban(pokemonID);
             return res.status(200).json({
@@ -81,7 +81,7 @@ module.exports = {
     },
     isFree: async (req, res) => {
         try {
-            let pokemonID = req.params.pokemonID;
+            let pokemonID = req.query.pokemonID;
 
             let pokemons = await Pokemon.isFree(pokemonID);
             return res.status(200).json({
@@ -98,8 +98,8 @@ module.exports = {
     },
     setTier: async (req, res) => {
         try {
-            let pokemonID = req.params.pokemonID;
-            let tier = req.params.tier;
+            let pokemonID = req.query.pokemonID;
+            let tier = req.query.tier;
 
             let pokemon = await Pokemon.setTier(pokemonID, tier);
             return res.status(200).json({

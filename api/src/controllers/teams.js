@@ -3,7 +3,7 @@ const Teams = require("../models/teams.js");
 module.exports = {
     getAllTeams: async (req, res) => {
         try {
-            //let leagueID = req.params.leagueID;
+            //let leagueID = req.query.leagueID;
 
             let teams = await Teams.getTeams();
             return res.status(200).json({
@@ -20,7 +20,7 @@ module.exports = {
     },
     getTeamDraft: async (req, res) => {
         try {
-            let teamID = req.params.teamID;
+            let teamID = req.query.teamID;
 
             let team = await Teams.getTeamDraft(teamID);
             return res.status(200).json({
@@ -37,7 +37,7 @@ module.exports = {
     },
     getTeam: async (req, res) => {
         try {
-            let teamID = req.params.teamID;
+            let teamID = req.query.teamID;
 
             let team = await Teams.getTeam(teamID);
             return res.status(200).json({
