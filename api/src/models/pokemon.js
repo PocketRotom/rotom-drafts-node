@@ -26,16 +26,22 @@ async function draft(teamID, pokemonID){
     return pokemon;
 }
 
-async function ban(pokemonID){
+async function ban(pokemonID, teamID){
     const knex = await connectDatabase();
 
-    let pokemon = knex("pokemon")
+    let pokemon = await knex("pokemon")
     .where({idPokemon: pokemonID})
     .update({
         tier: "BAN"
     })
 
-    return pokemon;
+    let team = await knex("team")
+    .where({idTeam: teamID})
+    .update({
+        ban: pokemonID
+    })
+
+    return {pokemon, team};
 }
 
 async function setTier(pokemonID, tier){

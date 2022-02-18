@@ -65,12 +65,13 @@ module.exports = {
             //let teamID = req.body.teamID;
             //let teamID = 27;
             let pokemonID = req.query.pokemonID;
+            let teamID = req.query.teamID;
 
-            let pokemon = await Pokemon.ban(pokemonID);
+            let {pokemon, team} = await Pokemon.ban(pokemonID, teamID);
             return res.status(200).json({
                 success: true,
                 //count: teams.length,
-                data: pokemon
+                data: [pokemon, team]
             });
         } catch (error) {
             return res.status(500).json({
