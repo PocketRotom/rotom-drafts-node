@@ -3,7 +3,9 @@ const { connectDatabase } = require('../utils/database');
 async function getPokemons() {
     const knex = await connectDatabase();
 
-    let teams = knex("pokemon").select("*");
+    let teams = await knex("pokemon").select("*");
+
+    knex.destroy();
 
     return teams;
 }
@@ -11,9 +13,11 @@ async function getPokemons() {
 async function getPokemonByTier(tier){
     const knex = await connectDatabase();
 
-    let teams = knex("pokemon").select("*").where({
+    let teams = await knex("pokemon").select("*").where({
         tier: tier
     });
+
+    knex.destroy();
 
     return teams;
 }
@@ -21,7 +25,9 @@ async function getPokemonByTier(tier){
 async function draft(teamID, pokemonID){
     const knex = await connectDatabase();
 
-    let pokemon = knex("teamdraft").insert({idTeam: teamID, idPokemon: pokemonID});
+    let pokemon = await knex("teamdraft").insert({idTeam: teamID, idPokemon: pokemonID});
+
+    knex.destroy();
 
     return pokemon;
 }
@@ -41,17 +47,21 @@ async function ban(pokemonID, teamID){
         ban: pokemonID
     })
 
+    knex.destroy();
+
     return {pokemon, team};
 }
 
 async function setTier(pokemonID, tier){
     const knex = await connectDatabase();
 
-    let pokemon = knex("pokemon")
+    let pokemon = await knex("pokemon")
     .where({idPokemon: pokemonID})
     .update({
         tier: tier
     })
+
+    knex.destroy();
 
     return pokemon;
 }
@@ -75,6 +85,8 @@ async function isFree(pokemonID){
     if (draft.length == 0){
         return {status: "Not Picked", tier: pokemons[0].tier};
     }
+
+    knex.destroy();
 
     return {status: "Picked", tier: pokemons[0].tier};
 

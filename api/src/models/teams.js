@@ -3,18 +3,20 @@ const { connectDatabase } = require('../utils/database');
 async function getTeams() {
     const knex = await connectDatabase();
 
-    let teams = knex("team").select("*");
+    let teams = await knex("team").select("*");
 
+    knex.destroy();
     return teams;
 }
 
 async function getTeamDraft(teamID) {
     const knex = await connectDatabase();
     
-    let draft = knex("teamdraft").select("*").where({
+    let draft = await knex("teamdraft").select("*").where({
         idTeam: teamID
     });
 
+    knex.destroy();
     return draft;
 }
 
@@ -22,29 +24,32 @@ async function getTeamDraft(teamID) {
 async function getTeam(teamID) {
     const knex = await connectDatabase();
     
-    let team = knex("team").select("*").where({
+    let team = await knex("team").select("*").where({
         idTeam: teamID
     });
 
+    knex.destroy();
     return team;
 }
 
 async function addPokemon(teamID, pokemonID){
     const knex = await connectDatabase();
 
-    let pokemon = knex("teamdraft").insert({idTeam: teamID, idPokemon: pokemonID});
+    let pokemon = await knex("teamdraft").insert({idTeam: teamID, idPokemon: pokemonID});
 
+    knex.destroy();
     return pokemon;
 }
 
 async function getDrafted(){
     const knex = await connectDatabase();
 
-    let team = knex("teamdraft")
+    let team = await knex("teamdraft")
     .select("teamdraft.pickNo", "teamdraft.idTeam", "teamdraft.idPokemon", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
     .leftJoin('team', 'teamdraft.idTeam', 'team.idTeam')
     .leftJoin('pokemon', 'teamdraft.idPokemon', 'pokemon.idPokemon');
 
+    knex.destroy();
     return team;
 }
 
