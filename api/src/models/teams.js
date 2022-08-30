@@ -45,7 +45,7 @@ async function getDrafted(){
     const knex = await connectDatabase();
 
     let team = await knex("teamdraft")
-    .select("teamdraft.pickNo", "teamdraft.idTeam", "teamdraft.idPokemon", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
+    .select("teamdraft.pickNo", "teamdraft.idTeam", "teamdraft.idPokemon", "teamdraft.draftNo", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
     .leftJoin('team', 'teamdraft.idTeam', 'team.idTeam')
     .leftJoin('pokemon', 'teamdraft.idPokemon', 'pokemon.idPokemon');
 

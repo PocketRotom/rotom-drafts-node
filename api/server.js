@@ -19,7 +19,7 @@ app.use('/public', express.static('public'))
 app.use('/', routes);
 
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log("Server is running on port " + port + ".");
 });

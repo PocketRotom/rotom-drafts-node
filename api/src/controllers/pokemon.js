@@ -40,8 +40,10 @@ module.exports = {
             let teamID = req.query.teamID;
             //let teamID = 27;
             let pokemonID = req.query.pokemonID;
+            let draftNo = req.query.draftNo;
+            let tier = req.query.tier;
 
-            let pokemon = await Pokemon.draft(teamID, pokemonID);
+            let pokemon = await Pokemon.draft(teamID, pokemonID, draftNo, tier);
             return res.status(200).json({
                 success: true,
                 //count: teams.length,
@@ -51,7 +53,7 @@ module.exports = {
             if (error.code = "ER_DUP_ENTRY"){
                 return res.status(500).json({
                     success: false,
-                    error: "Pokémon Already drafted"
+                    error: "Pokémon Already drafted this draft or you drafted it already"
                 })
             }
             return res.status(500).json({
@@ -83,8 +85,9 @@ module.exports = {
     isFree: async (req, res) => {
         try {
             let pokemonID = req.query.pokemonID;
+            let draftNo = req.query.draftNo;
 
-            let pokemons = await Pokemon.isFree(pokemonID);
+            let pokemons = await Pokemon.isFree(pokemonID, draftNo);
             return res.status(200).json({
                 success: true,
                 count: pokemons.length,
