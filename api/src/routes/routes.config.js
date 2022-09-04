@@ -25,4 +25,6 @@ router.put('/pokemon/setTier', pokemon.setTier);
 
 router.put('/doReset', teams.resetPoints);
 
+router.get('/pokemon', pokemon.getPokemon);
+
 module.exports = router;

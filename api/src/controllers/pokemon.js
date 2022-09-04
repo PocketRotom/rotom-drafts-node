@@ -118,4 +118,21 @@ module.exports = {
             })
         }
     },
+    getPokemon: async (req, res) => {
+        try {
+            let pokemonID = req.query.pokemonID;
+
+            let pokemons = await Pokemon.getPokemon(pokemonID);
+            return res.status(200).json({
+                success: true,
+                count: pokemons.length,
+                data: pokemons
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: error
+            })
+        }
+    },
 }
