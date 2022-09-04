@@ -11,19 +11,40 @@ async function getTeams() {
 
 async function getTeamDraft(teamID) {
     const knex = await connectDatabase();
-    
+
     let draft = await knex("teamdraft").select("*").where({
         idTeam: teamID
     });
 
+    let teamsNo = [];
+    let teams = [];
+
+    draft.forEach(pokemon => {
+        if (!teamsNo.includes(pokemon.draftNo)) {
+            teamsNo.push(pokemon.draftNo);
+        }
+    });
+
+    teamsNo.forEach(teamNo => {
+        let team = [teamNo, []];
+        draft.forEach(pokemon => {
+            if (teamNo == pokemon.draftNo) {
+                team[1].push(pokemon);
+            }
+        });
+        teams.push(team);
+    });
+
+    console.log(teams);
+
     knex.destroy();
-    return draft;
+    return teams;
 }
 
 
 async function getTeam(teamID) {
     const knex = await connectDatabase();
-    
+
     let team = await knex("team").select("*").where({
         idTeam: teamID
     });
@@ -32,26 +53,26 @@ async function getTeam(teamID) {
     return team;
 }
 
-async function addPokemon(teamID, pokemonID){
+async function addPokemon(teamID, pokemonID) {
     const knex = await connectDatabase();
 
-    let pokemon = await knex("teamdraft").insert({idTeam: teamID, idPokemon: pokemonID});
+    let pokemon = await knex("teamdraft").insert({ idTeam: teamID, idPokemon: pokemonID });
 
     knex.destroy();
     return pokemon;
 }
 
-async function getDrafted(){
+async function getDrafted() {
     const knex = await connectDatabase();
 
     let team = await knex("teamdraft")
-    .select("teamdraft.pickNo", "teamdraft.idTeam", "teamdraft.idPokemon", "teamdraft.draftNo", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
-    .leftJoin('team', 'teamdraft.idTeam', 'team.idTeam')
-    .leftJoin('pokemon', 'teamdraft.idPokemon', 'pokemon.idPokemon');
+        .select("teamdraft.pickNo", "teamdraft.idTeam", "teamdraft.idPokemon", "teamdraft.draftNo", "team.teamName", "team.coachName", "team.roleID", "pokemon.name", "pokemon.tier")
+        .leftJoin('team', 'teamdraft.idTeam', 'team.idTeam')
+        .leftJoin('pokemon', 'teamdraft.idPokemon', 'pokemon.idPokemon');
 
     knex.destroy();
     return team;
 }
 
 
-module.exports = {getTeams, getTeamDraft, getTeam, addPokemon, getDrafted };
+module.exports = { getTeams, getTeamDraft, getTeam, addPokemon, getDrafted };
