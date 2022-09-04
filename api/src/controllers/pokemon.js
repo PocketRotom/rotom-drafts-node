@@ -53,7 +53,7 @@ module.exports = {
             if (error.code = "ER_DUP_ENTRY"){
                 return res.status(500).json({
                     success: false,
-                    error: "Pokémon Already drafted this draft or you drafted it already"
+                    error: "Pokémon Already drafted this draft or you drafted it already... Or I f***ed up"
                 })
             }
             return res.status(500).json({

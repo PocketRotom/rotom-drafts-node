@@ -16,8 +16,12 @@ async function getTeamDraft(teamID) {
         idTeam: teamID
     });
 
+    let points = await knex("team").select("points").where({
+        idTeam: teamID
+    });
+
     let teamsNo = [];
-    let teams = [];
+    let teams = {"availablePoints": points[0].points, teams: []};
 
     draft.forEach(pokemon => {
         if (!teamsNo.includes(pokemon.draftNo)) {
@@ -26,16 +30,14 @@ async function getTeamDraft(teamID) {
     });
 
     teamsNo.forEach(teamNo => {
-        let team = [teamNo, []];
+        let team = {"teamNo": teamNo, "team": []}
         draft.forEach(pokemon => {
             if (teamNo == pokemon.draftNo) {
-                team[1].push(pokemon);
+                team.team.push(pokemon);
             }
         });
-        teams.push(team);
+        teams.teams.push(team);
     });
-
-    console.log(teams);
 
     knex.destroy();
     return teams;
@@ -48,6 +50,15 @@ async function getTeam(teamID) {
     let team = await knex("team").select("*").where({
         idTeam: teamID
     });
+
+    knex.destroy();
+    return team;
+}
+
+async function doReset() {
+    const knex = await connectDatabase();
+
+    let team = await knex("team").update({points: 100})
 
     knex.destroy();
     return team;
@@ -75,4 +86,4 @@ async function getDrafted() {
 }
 
 
-module.exports = { getTeams, getTeamDraft, getTeam, addPokemon, getDrafted };
+module.exports = { getTeams, getTeamDraft, getTeam, addPokemon, getDrafted, doReset };

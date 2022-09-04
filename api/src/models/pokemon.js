@@ -25,11 +25,21 @@ async function getPokemonByTier(tier) {
 async function draft(teamID, pokemonID, draftNo, tier) {
     const knex = await connectDatabase();
 
+    let points = await knex("team").select("points").where({
+        idTeam: teamID
+    });
+
+    let newPoints = points[0].points - tier;
+
     let pokemon = await knex("teamdraft").insert({ idTeam: teamID, idPokemon: pokemonID, draftNo: draftNo, tier: tier });
+
+    let updatePoints = await knex("team").update({ points: newPoints }).where({
+        idTeam: teamID
+    });
 
     knex.destroy();
 
-    return pokemon;
+    return { "pokemon": pokemon, "points": newPoints };
 }
 
 async function ban(pokemonID, teamID) {
@@ -83,14 +93,14 @@ async function isFree(pokemonID, draftNo) {
 
     let isDraft = false;
     let i = 0;
-    while (isDraft == false && i < draft.length ) {
+    while (isDraft == false && i < draft.length) {
         if (draft[i].draftNo == draftNo) {
             isDraft = true;
         }
         i++;
     }
     if (isDraft) {
-        return { status: "Picked", tier: pokemons[0].tier, draftNo: draft[i-1].draftNo, idTeam: draft[i-1].idTeam };
+        return { status: "Picked", tier: pokemons[0].tier, draftNo: draft[i - 1].draftNo, idTeam: draft[i - 1].idTeam };
     }
 
     return { status: "Not Picked", tier: pokemons[0].tier };
