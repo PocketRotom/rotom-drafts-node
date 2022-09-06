@@ -106,12 +106,15 @@ async function isFree(pokemonID, draftNo) {
     return { status: "Not Picked", tier: pokemons[0].tier };
 }
 
-async function getPokemon(pokemonID,) {
+async function getPokemon(pokemonID) {
     const knex = await connectDatabase();
 
     let pokemons = await knex("pokemon").select("*").where({
         idPokemon: pokemonID
     });
+
+    knex.destroy();
+
     return pokemons;
 }
 
