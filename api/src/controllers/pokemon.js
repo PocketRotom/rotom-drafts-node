@@ -50,7 +50,7 @@ module.exports = {
                 data: pokemon
             });
         } catch (error) {
-            if (error.code = "ER_DUP_ENTRY"){
+            if (error.code == "ER_DUP_ENTRY"){
                 return res.status(500).json({
                     success: false,
                     error: "Pokémon Already drafted this draft or you drafted it already... Or I f***ed up"
