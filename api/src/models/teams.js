@@ -69,8 +69,6 @@ async function getDraftedOrdered() {
 		}
 	});
 
-	console.log(teamsNo);
-
 	teamsNo.forEach((teamNo) => {
 		let team = { draftNo: teamNo, team: [] };
 		draft.forEach((pokemon) => {
@@ -80,6 +78,13 @@ async function getDraftedOrdered() {
 		});
 		teams.teams.push(team);
 	});
+
+	console.log(teams);
+
+	let str = JSON.stringify(teams);
+	str = str.replace(`"teams"`, `"picks"`);
+	str = str.replace(`"team"`, `"picksByDraft"`);
+	teams = JSON.parse(str);
 
 	knex.destroy();
 	return teams;
