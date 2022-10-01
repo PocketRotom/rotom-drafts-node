@@ -3,28 +3,30 @@ const router = express.Router();
 const teams = require("../controllers/teams.js");
 const pokemon = require("../controllers/pokemon.js");
 
-router.get('/allTeams', teams.getAllTeams);
+router.get("/allTeams", teams.getAllTeams);
 
-router.get('/team', teams.getTeam);
+router.get("/team", teams.getTeam);
 
-router.get('/teamDraft', teams.getTeamDraft);
+router.get("/teamDraft", teams.getTeamDraft);
 
-router.get('/drafted', teams.getDrafted);
+router.get("/drafted", teams.getDrafted);
 
-router.get('/pokemons', pokemon.getPokemons);
+router.get("/draftedByID", teams.getDraftedByID);
 
-router.get('/pokemon/byTier', pokemon.getPokemonByTier);
+router.get("/pokemons", pokemon.getPokemons);
 
-router.post('/draft', pokemon.draft);
+router.get("/pokemon/byTier", pokemon.getPokemonByTier);
 
-router.put('/pokemon/ban', pokemon.ban);
+router.post("/draft", pokemon.draft);
 
-router.get('/pokemon/isFree', pokemon.isFree);
+router.put("/pokemon/ban", pokemon.ban);
 
-router.put('/pokemon/setTier', pokemon.setTier);
+router.get("/pokemon/isFree", pokemon.isFree);
 
-router.put('/doReset', teams.resetPoints);
+router.put("/pokemon/setTier", pokemon.setTier);
 
-router.get('/pokemon', pokemon.getPokemon);
+router.put("/doReset", teams.resetPoints);
+
+router.get("/pokemon", pokemon.getPokemon);
 
 module.exports = router;
