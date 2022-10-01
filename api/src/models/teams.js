@@ -84,6 +84,7 @@ async function getDraftedOrdered() {
 	let str = JSON.stringify(teams);
 	str = str.replace(`"teams"`, `"picks"`);
 	str = str.replace(`"team"`, `"picksByDraft"`);
+	str = str.replace(`"team"`, `"picksByDraft"`);
 	teams = JSON.parse(str);
 
 	knex.destroy();
