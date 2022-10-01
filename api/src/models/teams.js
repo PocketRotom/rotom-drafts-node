@@ -61,7 +61,7 @@ async function getDraftedOrdered() {
 		.leftJoin("pokemon", "teamdraft.idPokemon", "pokemon.idPokemon");
 
 	let teamsNo = [];
-	let teams = { teams: [] };
+	let teams = { picks: [] };
 
 	draft.forEach((pokemon) => {
 		if (!teamsNo.includes(pokemon.draftNo)) {
@@ -70,22 +70,14 @@ async function getDraftedOrdered() {
 	});
 
 	teamsNo.forEach((teamNo) => {
-		let team = { draftNo: teamNo, team: [] };
+		let team = { draftNo: teamNo, picksByDraft: [] };
 		draft.forEach((pokemon) => {
 			if (teamNo == pokemon.draftNo) {
-				team.team.push(pokemon);
+				team.picksByDraft.push(pokemon);
 			}
 		});
-		teams.teams.push(team);
+		teams.picks.push(team);
 	});
-
-	console.log(teams);
-
-	let str = JSON.stringify(teams);
-	str = str.replace(`"teams"`, `"picks"`);
-	str = str.replace(`"team"`, `"picksByDraft"`);
-	str = str.replace(`"team"`, `"picksByDraft"`);
-	teams = JSON.parse(str);
 
 	knex.destroy();
 	return teams;
