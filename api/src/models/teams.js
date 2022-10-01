@@ -43,6 +43,48 @@ async function getTeamDraft(teamID) {
 	return teams;
 }
 
+async function getDraftedOrdered() {
+	const knex = await connectDatabase();
+	let draft = await knex("teamdraft")
+		.select(
+			"teamdraft.pickNo",
+			"teamdraft.idTeam",
+			"teamdraft.idPokemon",
+			"teamdraft.draftNo",
+			"team.teamName",
+			"team.coachName",
+			"team.roleID",
+			"pokemon.name",
+			"pokemon.tier"
+		)
+		.leftJoin("team", "teamdraft.idTeam", "team.idTeam")
+		.leftJoin("pokemon", "teamdraft.idPokemon", "pokemon.idPokemon");
+
+	let teamsNo = [];
+	let teams = { teams: [] };
+
+	draft.forEach((pokemon) => {
+		if (!teamsNo.includes(pokemon.draftNo)) {
+			teamsNo.push(pokemon.draftNo);
+		}
+	});
+
+	console.log(teamsNo);
+
+	teamsNo.forEach((teamNo) => {
+		let team = { draftNo: teamNo, team: [] };
+		draft.forEach((pokemon) => {
+			if (teamNo == pokemon.draftNo) {
+				team.team.push(pokemon);
+			}
+		});
+		teams.teams.push(team);
+	});
+
+	knex.destroy();
+	return teams;
+}
+
 async function getTeam(teamID) {
 	const knex = await connectDatabase();
 
@@ -123,6 +165,7 @@ async function getDraftedByID(draftNo) {
 module.exports = {
 	getTeams,
 	getTeamDraft,
+	getDraftedOrdered,
 	getTeam,
 	addPokemon,
 	getDrafted,

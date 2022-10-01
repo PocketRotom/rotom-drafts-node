@@ -67,6 +67,21 @@ module.exports = {
 			});
 		}
 	},
+	getDraftedOrdered: async (req, res) => {
+		try {
+			let team = await Teams.getDraftedOrdered();
+			return res.status(200).json({
+				success: true,
+				count: team.length,
+				data: team,
+			});
+		} catch (error) {
+			return res.status(500).json({
+				success: false,
+				error: error,
+			});
+		}
+	},
 	getDraftedByID: async (req, res) => {
 		try {
 			let draftNo = req.query.draftNo;

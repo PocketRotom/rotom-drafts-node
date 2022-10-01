@@ -11,6 +11,8 @@ router.get("/teamDraft", teams.getTeamDraft);
 
 router.get("/drafted", teams.getDrafted);
 
+router.get("/draftedOrdered", teams.getDraftedOrdered);
+
 router.get("/draftedByID", teams.getDraftedByID);
 
 router.get("/pokemons", pokemon.getPokemons);
