@@ -126,7 +126,7 @@ async function getPokemon(pokemonID) {
 	return pokemons;
 }
 
-async function addPokemon(name, type1, type2, hp, attack, defense, spAttack, spDefense, speed) {
+async function addPokemon(name, type1, type2, hp, attack, defense, spAttack, spDefense, speed, tier) {
 	const knex = await connectDatabase();
 
 	let pokemon;
@@ -141,7 +141,8 @@ async function addPokemon(name, type1, type2, hp, attack, defense, spAttack, spD
 			defense,
 			spAttack,
 			spDefense,
-			speed
+			speed,
+			tier
 		});
 	} else {
 		pokemon = await knex("pokemon").insert({
@@ -153,7 +154,8 @@ async function addPokemon(name, type1, type2, hp, attack, defense, spAttack, spD
 			defense,
 			spAttack,
 			spDefense,
-			speed
+			speed,
+			tier
 		});
 	}
 

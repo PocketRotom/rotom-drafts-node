@@ -145,8 +145,9 @@ module.exports = {
             let spAttack = req.query.spAttack;
             let spDefense = req.query.spDefense;
             let speed = req.query.speed;
+            let tier = req.query.tier;
 
-            let pokemon = await Pokemon.addPokemon(name, type1, type2, hp, attack, defense, spAttack, spDefense, speed);
+            let pokemon = await Pokemon.addPokemon(name, type1, type2, hp, attack, defense, spAttack, spDefense, speed, tier);
             return res.status(200).json({
                 success: true,
                 //count: teams.length,
