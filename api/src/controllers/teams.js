@@ -113,4 +113,21 @@ module.exports = {
 			});
 		}
 	},
+	draftTera: async (req, res) => {
+		try {
+			let teraType = req.query.teraType;
+			let teamID = req.query.teamID;
+			let team = await Teams.addTeraType(teraType, teamID);
+			return res.status(200).json({
+				success: true,
+				count: team.length,
+				data: team,
+			});
+		} catch (error) {
+			return res.status(500).json({
+				success: false,
+				error: error,
+			});
+		}
+	},
 };

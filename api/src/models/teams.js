@@ -103,6 +103,15 @@ async function doReset() {
 	return team;
 }
 
+async function addTeraType(teraType, teamID) {
+	const knex = await connectDatabase();
+
+	let team = await knex("team").update({ teraType: teraType }).where({ idTeam: teamID });
+
+	knex.destroy();
+	return team;
+}
+
 async function addPokemon(teamID, pokemonID) {
 	const knex = await connectDatabase();
 
@@ -169,4 +178,5 @@ module.exports = {
 	getDrafted,
 	getDraftedByID,
 	doReset,
+	addTeraType
 };

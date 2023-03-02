@@ -38,7 +38,6 @@ module.exports = {
     draft: async (req, res) => {
         try {
             let teamID = req.query.teamID;
-            //let teamID = 27;
             let pokemonID = req.query.pokemonID;
             let draftNo = req.query.draftNo;
             let tier = req.query.tier;
@@ -50,7 +49,7 @@ module.exports = {
                 data: pokemon
             });
         } catch (error) {
-            if (error.code == "ER_DUP_ENTRY"){
+            if (error.code == "ER_DUP_ENTRY") {
                 return res.status(500).json({
                     success: false,
                     error: "Pokémon Already drafted this draft or you drafted it already... Or I f***ed up"
@@ -69,7 +68,7 @@ module.exports = {
             let pokemonID = req.query.pokemonID;
             let teamID = req.query.teamID;
 
-            let {pokemon, team} = await Pokemon.ban(pokemonID, teamID);
+            let { pokemon, team } = await Pokemon.ban(pokemonID, teamID);
             return res.status(200).json({
                 success: true,
                 //count: teams.length,
@@ -129,6 +128,38 @@ module.exports = {
                 data: pokemons
             });
         } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: error
+            })
+        }
+    },
+    addPokemon: async (req, res) => {
+        try {
+            let name = req.query.name;
+            let type1 = req.query.type1;
+            let type2 = req.query.type2;
+            let hp = req.query.hp;
+            let attack = req.query.attack;
+            let defense = req.query.defense;
+            let spAttack = req.query.spAttack;
+            let spDefense = req.query.spDefense;
+            let speed = req.query.speed;
+
+            let pokemon = await Pokemon.addPokemon(name, type1, type2, hp, attack, defense, spAttack, spDefense, speed);
+            return res.status(200).json({
+                success: true,
+                //count: teams.length,
+                data: pokemon
+            });
+        } catch (error) {
+            console.log(error);
+            if (error.code == "ER_DUP_ENTRY") {
+                return res.status(500).json({
+                    success: false,
+                    error: "Pokémon already in the list"
+                })
+            }
             return res.status(500).json({
                 success: false,
                 error: error
