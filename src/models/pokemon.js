@@ -51,6 +51,21 @@ async function draft(teamID, pokemonID, draftNo, tier) {
 	return { pokemon: pokemon, points: newPoints };
 }
 
+async function draftByTier(teamID, pokemonID, draftNo, tier) {
+	const knex = await connectDatabase();
+
+	let pokemon = await knex("teamdraft").insert({
+		idTeam: teamID,
+		idPokemon: pokemonID,
+		draftNo: draftNo,
+		tier: tier,
+	});
+
+	knex.destroy();
+
+	return { pokemon: pokemon };
+}
+
 async function ban(pokemonID, teamID) {
 	const knex = await connectDatabase();
 
@@ -169,6 +184,7 @@ module.exports = {
 	getPokemonByTier,
 	draft,
 	ban,
+	draftByTier,
 	isFree,
 	setTier,
 	getPokemon,

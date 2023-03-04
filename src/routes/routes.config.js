@@ -24,6 +24,8 @@ router.get("/pokemon/byTier", pokemon.getPokemonByTier);
 
 router.post("/draft", pokemon.draft);
 
+router.post("/draftByTier", pokemon.draftByTier);
+
 router.post("/pokemon/add", pokemon.addPokemon);
 
 router.put("/pokemon/ban", pokemon.ban);

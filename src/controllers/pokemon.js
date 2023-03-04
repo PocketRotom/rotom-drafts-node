@@ -61,6 +61,32 @@ module.exports = {
             })
         }
     },
+    draftByTier: async (req, res) => {
+        try {
+            let teamID = req.query.teamID;
+            let pokemonID = req.query.pokemonID;
+            let draftNo = req.query.draftNo;
+            let tier = req.query.tier;
+
+            let pokemon = await Pokemon.draftByTier(teamID, pokemonID, draftNo, tier);
+            return res.status(200).json({
+                success: true,
+                //count: teams.length,
+                data: pokemon
+            });
+        } catch (error) {
+            if (error.code == "ER_DUP_ENTRY") {
+                return res.status(500).json({
+                    success: false,
+                    error: "Pokémon Already drafted this draft or you drafted it already... Or I f***ed up"
+                })
+            }
+            return res.status(500).json({
+                success: false,
+                error: error
+            })
+        }
+    },
     ban: async (req, res) => {
         try {
             //let teamID = req.body.teamID;
