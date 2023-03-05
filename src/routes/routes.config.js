@@ -34,7 +34,7 @@ router.get("/pokemon/isFree", pokemon.isFree);
 
 router.put("/pokemon/setTier", pokemon.setTier);
 
-router.put("/doReset", teams.resetPoints);
+router.put("/doReset", teams.doReset);
 
 router.get("/pokemon", pokemon.getPokemon);
 

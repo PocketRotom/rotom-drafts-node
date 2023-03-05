@@ -98,7 +98,7 @@ module.exports = {
 			});
 		}
 	},
-	resetPoints: async (req, res) => {
+	doReset: async (req, res) => {
 		try {
 			let team = await Teams.doReset();
 			return res.status(200).json({

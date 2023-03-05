@@ -97,7 +97,7 @@ async function getTeam(teamID) {
 async function doReset() {
 	const knex = await connectDatabase();
 
-	let team = await knex("team").update({ points: 100 });
+	let team = await knex("team").update({ points: 100, teraType: null });
 
 	knex.destroy();
 	return team;
