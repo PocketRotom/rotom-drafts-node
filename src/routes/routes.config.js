@@ -42,4 +42,6 @@ router.get("/getCurrentPick", general.getCurrentPick);
 
 router.put("/setCurrentPick", general.setCurrentPick);
 
+router.get("/lgaPokemon", pokemon.getLgaPokemon);
+
 module.exports = router;

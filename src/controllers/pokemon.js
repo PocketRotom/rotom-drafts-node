@@ -193,4 +193,21 @@ module.exports = {
             })
         }
     },
+
+    getLgaPokemon: async (req, res) => {
+        try {
+
+            let pokemons = await Pokemon.getLgaPokemon();
+            return res.status(200).json({
+                success: true,
+                count: pokemons.length,
+                data: pokemons
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                error: error
+            })
+        }
+    },
 }

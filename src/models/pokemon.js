@@ -179,6 +179,16 @@ async function addPokemon(name, type1, type2, hp, attack, defense, spAttack, spD
 	return { pokemon: pokemon };
 }
 
+async function getLgaPokemon() {
+	const knex = await connectDatabase();
+
+	let teams = await knex("LGA_Randoms").select("*");
+
+	knex.destroy();
+
+	return teams;
+}
+
 module.exports = {
 	getPokemons,
 	getPokemonByTier,
@@ -188,5 +198,6 @@ module.exports = {
 	isFree,
 	setTier,
 	getPokemon,
-	addPokemon
+	addPokemon,
+	getLgaPokemon
 };
