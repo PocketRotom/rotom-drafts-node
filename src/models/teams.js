@@ -98,6 +98,9 @@ async function doReset() {
 	const knex = await connectDatabase();
 
 	let team = await knex("team").update({ points: 100, teraType: null });
+	await knex("teamdraft").del();
+
+	await knex.raw('ALTER TABLE ' + 'teamdraft' + ' AUTO_INCREMENT = 1');
 
 	knex.destroy();
 	return team;
