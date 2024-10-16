@@ -1,0 +1,932 @@
+[
+  {
+    "name": "Bulbasaur",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Ivysaur",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Venusaur",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Squirtle",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Wartortle",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Blastoise",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Ekans",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Arbok",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Nidoran-F",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Nidoran-M",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Oddish",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Gloom",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Vileplume",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Venonat",
+    "type1": "Bug",
+    "type2": "Poison"
+  },
+  {
+    "name": "Venomoth",
+    "type1": "Bug",
+    "type2": "Poison"
+  },
+  {
+    "name": "Meowth-Galar",
+    "type1": "Steel",
+    "type2": null
+  },
+  {
+    "name": "Psyduck",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Golduck",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Poliwag",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Poliwhirl",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Bellsprout",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Weepinbell",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Victreebel",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Tentacool",
+    "type1": "Water",
+    "type2": "Poison"
+  },
+  {
+    "name": "Tentacruel",
+    "type1": "Water",
+    "type2": "Poison"
+  },
+  {
+    "name": "Seel",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Grimer",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Muk",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Shellder",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Koffing",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Weezing",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Horsea",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Seadra",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Magikarp",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Vaporeon",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Chikorita",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Bayleef",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Meganium",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Totodile",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Croconaw",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Feraligatr",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Spinarak",
+    "type1": "Bug",
+    "type2": "Poison"
+  },
+  {
+    "name": "Ariados",
+    "type1": "Bug",
+    "type2": "Poison"
+  },
+  {
+    "name": "Bellossom",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Sudowoodo",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Politoed",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Sunkern",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Sunflora",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Pineco",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Forretress",
+    "type1": "Bug",
+    "type2": "Steel"
+  },
+  {
+    "name": "Qwilfish",
+    "type1": "Water",
+    "type2": "Poison"
+  },
+  {
+    "name": "Scizor",
+    "type1": "Bug",
+    "type2": "Steel"
+  },
+  {
+    "name": "Suicune",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Treecko",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Grovyle",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Sceptile",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Mudkip",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Lotad",
+    "type1": "Water",
+    "type2": "Grass"
+  },
+  {
+    "name": "Lombre",
+    "type1": "Water",
+    "type2": "Grass"
+  },
+  {
+    "name": "Ludicolo",
+    "type1": "Water",
+    "type2": "Grass"
+  },
+  {
+    "name": "Seedot",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Surskit",
+    "type1": "Bug",
+    "type2": "Water"
+  },
+  {
+    "name": "Shroomish",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Nosepass",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Volbeat",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Illumise",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Gulpin",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Swalot",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Cacnea",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Seviper",
+    "type1": "Poison",
+    "type2": null
+  },
+  {
+    "name": "Corphish",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Feebas",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Milotic",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Luvdisc",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Regirock",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Registeel",
+    "type1": "Steel",
+    "type2": null
+  },
+  {
+    "name": "Kyogre",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Kyogre-Primal",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Turtwig",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Grotle",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Piplup",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Prinplup",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Empoleon",
+    "type1": "Water",
+    "type2": "Steel"
+  },
+  {
+    "name": "Kricketot",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Kricketune",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Cranidos",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Rampardos",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Shieldon",
+    "type1": "Rock",
+    "type2": "Steel"
+  },
+  {
+    "name": "Bastiodon",
+    "type1": "Rock",
+    "type2": "Steel"
+  },
+  {
+    "name": "Wormadam-Trash",
+    "type1": "Bug",
+    "type2": "Steel"
+  },
+  {
+    "name": "Buizel",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Floatzel",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Shellos",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Bonsly",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Finneon",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Lumineon",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Leafeon",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Probopass",
+    "type1": "Rock",
+    "type2": "Steel"
+  },
+  {
+    "name": "Phione",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Manaphy",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Shaymin",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Snivy",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Servine",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Serperior",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Oshawott",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Dewott",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Samurott",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Sewaddle",
+    "type1": "Bug",
+    "type2": "Grass"
+  },
+  {
+    "name": "Swadloon",
+    "type1": "Bug",
+    "type2": "Grass"
+  },
+  {
+    "name": "Leavanny",
+    "type1": "Bug",
+    "type2": "Grass"
+  },
+  {
+    "name": "Petilil",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Lilligant",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Basculin",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Foongus",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Amoonguss",
+    "type1": "Grass",
+    "type2": "Poison"
+  },
+  {
+    "name": "Alomomola",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Chespin",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Quilladin",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Froakie",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Frogadier",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Scatterbug",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Spewpa",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Skiddo",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Gogoat",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Skrelp",
+    "type1": "Poison",
+    "type2": "Water"
+  },
+  {
+    "name": "Clauncher",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Clawitzer",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Popplio",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Brionne",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Grubbin",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Rockruff",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Lycanroc",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Lycanroc-Midnight",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Lycanroc-Dusk",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Mareanie",
+    "type1": "Poison",
+    "type2": "Water"
+  },
+  {
+    "name": "Toxapex",
+    "type1": "Poison",
+    "type2": "Water"
+  },
+  {
+    "name": "Dewpider",
+    "type1": "Water",
+    "type2": "Bug"
+  },
+  {
+    "name": "Araquanid",
+    "type1": "Water",
+    "type2": "Bug"
+  },
+  {
+    "name": "Fomantis",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Lurantis",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Bounsweet",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Steenee",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Tsareena",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Grookey",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Thwackey",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Rillaboom",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Sobble",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Drizzile",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Inteleon",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Chewtle",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Drednaw",
+    "type1": "Water",
+    "type2": "Rock"
+  },
+  {
+    "name": "Rolycoly",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Arrokuda",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Barraskewda",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Perrserker",
+    "type1": "Steel",
+    "type2": null
+  },
+  {
+    "name": "Stonjourner",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Cufant",
+    "type1": "Steel",
+    "type2": null
+  },
+  {
+    "name": "Copperajah",
+    "type1": "Steel",
+    "type2": null
+  },
+  {
+    "name": "Kleavor",
+    "type1": "Bug",
+    "type2": "Rock"
+  },
+  {
+    "name": "Sprigatito",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Floragato",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Quaxly",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Quaxwell",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Tarountula",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Spidops",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Nymble",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Nacli",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Naclstack",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Garganacl",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Klawf",
+    "type1": "Rock",
+    "type2": null
+  },
+  {
+    "name": "Capsakid",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Rellor",
+    "type1": "Bug",
+    "type2": null
+  },
+  {
+    "name": "Wiglett",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Wugtrio",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Finizen",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Palafin",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Palafin-Hero",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Varoom",
+    "type1": "Steel",
+    "type2": "Poison"
+  },
+  {
+    "name": "Revavroom",
+    "type1": "Steel",
+    "type2": "Poison"
+  },
+  {
+    "name": "Orthworm",
+    "type1": "Steel",
+    "type2": null
+  },
+  {
+    "name": "Glimmet",
+    "type1": "Rock",
+    "type2": "Poison"
+  },
+  {
+    "name": "Glimmora",
+    "type1": "Rock",
+    "type2": "Poison"
+  },
+  {
+    "name": "Dondozo",
+    "type1": "Water",
+    "type2": null
+  },
+  {
+    "name": "Ogerpon",
+    "type1": "Grass",
+    "type2": null
+  },
+  {
+    "name": "Ogerpon-Wellspring",
+    "type1": "Grass",
+    "type2": "Water"
+  },
+  {
+    "name": "Ogerpon-Cornerstone",
+    "type1": "Grass",
+    "type2": "Rock"
+  }
+]

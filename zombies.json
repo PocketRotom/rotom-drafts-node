@@ -1,0 +1,772 @@
+[
+  {
+    "name": "Charmander",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Charmeleon",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Sandshrew",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Sandslash",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Vulpix",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Vulpix-Alola",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Ninetales",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Diglett",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Dugtrio",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Meowth-Alola",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Persian-Alola",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Mankey",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Primeape",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Growlithe",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Arcanine",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Farfetch'd-Galar",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Hitmonlee",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Hitmonchan",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Magmar",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Flareon",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Dratini",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Dragonair",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Cyndaquil",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Quilava",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Typhlosion",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Umbreon",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Sneasel",
+    "type1": "Dark",
+    "type2": "Ice"
+  },
+  {
+    "name": "Slugma",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Swinub",
+    "type1": "Ice",
+    "type2": "Ground"
+  },
+  {
+    "name": "Piloswine",
+    "type1": "Ice",
+    "type2": "Ground"
+  },
+  {
+    "name": "Houndour",
+    "type1": "Dark",
+    "type2": "Fire"
+  },
+  {
+    "name": "Houndoom",
+    "type1": "Dark",
+    "type2": "Fire"
+  },
+  {
+    "name": "Phanpy",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Donphan",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Tyrogue",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Hitmontop",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Magby",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Entei",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Torchic",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Combusken",
+    "type1": "Fire",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Blaziken",
+    "type1": "Fire",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Poochyena",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Mightyena",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Makuhita",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Hariyama",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Numel",
+    "type1": "Fire",
+    "type2": "Ground"
+  },
+  {
+    "name": "Camerupt",
+    "type1": "Fire",
+    "type2": "Ground"
+  },
+  {
+    "name": "Torkoal",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Trapinch",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Vibrava",
+    "type1": "Ground",
+    "type2": "Dragon"
+  },
+  {
+    "name": "Flygon",
+    "type1": "Ground",
+    "type2": "Dragon"
+  },
+  {
+    "name": "Snorunt",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Glalie",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Bagon",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Shelgon",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Regice",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Groudon",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Groudon-Primal",
+    "type1": "Ground",
+    "type2": "Fire"
+  },
+  {
+    "name": "Chimchar",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Monferno",
+    "type1": "Fire",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Infernape",
+    "type1": "Fire",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Gible",
+    "type1": "Dragon",
+    "type2": "Ground"
+  },
+  {
+    "name": "Gabite",
+    "type1": "Dragon",
+    "type2": "Ground"
+  },
+  {
+    "name": "Garchomp",
+    "type1": "Dragon",
+    "type2": "Ground"
+  },
+  {
+    "name": "Riolu",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Hippopotas",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Hippowdon",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Weavile",
+    "type1": "Dark",
+    "type2": "Ice"
+  },
+  {
+    "name": "Magmortar",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Glaceon",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Mamoswine",
+    "type1": "Ice",
+    "type2": "Ground"
+  },
+  {
+    "name": "Darkrai",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Tepig",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Pignite",
+    "type1": "Fire",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Emboar",
+    "type1": "Fire",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Drilbur",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Timburr",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Gurdurr",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Conkeldurr",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Sandile",
+    "type1": "Ground",
+    "type2": "Dark"
+  },
+  {
+    "name": "Krokorok",
+    "type1": "Ground",
+    "type2": "Dark"
+  },
+  {
+    "name": "Krookodile",
+    "type1": "Ground",
+    "type2": "Dark"
+  },
+  {
+    "name": "Darumaka-Galar",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Darmanitan-Galar",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Scraggy",
+    "type1": "Dark",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Scrafty",
+    "type1": "Dark",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Zorua",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Zoroark",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Axew",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Fraxure",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Haxorus",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Cubchoo",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Beartic",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Cryogonal",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Mienfoo",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Mienshao",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Deino",
+    "type1": "Dark",
+    "type2": "Dragon"
+  },
+  {
+    "name": "Zweilous",
+    "type1": "Dark",
+    "type2": "Dragon"
+  },
+  {
+    "name": "Hydreigon",
+    "type1": "Dark",
+    "type2": "Dragon"
+  },
+  {
+    "name": "Reshiram",
+    "type1": "Dragon",
+    "type2": "Fire"
+  },
+  {
+    "name": "Kyurem",
+    "type1": "Dragon",
+    "type2": "Ice"
+  },
+  {
+    "name": "Kyurem-Black",
+    "type1": "Dragon",
+    "type2": "Ice"
+  },
+  {
+    "name": "Kyurem-White",
+    "type1": "Dragon",
+    "type2": "Ice"
+  },
+  {
+    "name": "Fennekin",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Braixen",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Goomy",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Sliggoo",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Goodra",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Bergmite",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Avalugg",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Zygarde-10%",
+    "type1": "Dragon",
+    "type2": "Ground"
+  },
+  {
+    "name": "Zygarde-Complete",
+    "type1": "Dragon",
+    "type2": "Ground"
+  },
+  {
+    "name": "Litten",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Torracat",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Incineroar",
+    "type1": "Fire",
+    "type2": "Dark"
+  },
+  {
+    "name": "Crabrawler",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Crabominable",
+    "type1": "Fighting",
+    "type2": "Ice"
+  },
+  {
+    "name": "Mudbray",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Mudsdale",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Passimian",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Jangmo-o",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Hakamo-o",
+    "type1": "Dragon",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Kommo-o",
+    "type1": "Dragon",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Scorbunny",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Raboot",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Cinderace",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Silicobra",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Sandaconda",
+    "type1": "Ground",
+    "type2": null
+  },
+  {
+    "name": "Falinks",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Eiscue",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Zamazenta",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Kubfu",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Urshifu",
+    "type1": "Fighting",
+    "type2": "Dark"
+  },
+  {
+    "name": "Regidrago",
+    "type1": "Dragon",
+    "type2": null
+  },
+  {
+    "name": "Glastrier",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Fuecoco",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Crocalor",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Charcadet",
+    "type1": "Fire",
+    "type2": null
+  },
+  {
+    "name": "Maschiff",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Mabosstiff",
+    "type1": "Dark",
+    "type2": null
+  },
+  {
+    "name": "Cetoddle",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Cetitan",
+    "type1": "Ice",
+    "type2": null
+  },
+  {
+    "name": "Great Tusk",
+    "type1": "Ground",
+    "type2": "Fighting"
+  },
+  {
+    "name": "Frigibax",
+    "type1": "Dragon",
+    "type2": "Ice"
+  },
+  {
+    "name": "Arctibax",
+    "type1": "Dragon",
+    "type2": "Ice"
+  },
+  {
+    "name": "Baxcalibur",
+    "type1": "Dragon",
+    "type2": "Ice"
+  },
+  {
+    "name": "Chien-Pao",
+    "type1": "Dark",
+    "type2": "Ice"
+  },
+  {
+    "name": "Ting-Lu",
+    "type1": "Dark",
+    "type2": "Ground"
+  },
+  {
+    "name": "Chi-Yu",
+    "type1": "Dark",
+    "type2": "Fire"
+  },
+  {
+    "name": "Roaring Moon",
+    "type1": "Dragon",
+    "type2": "Dark"
+  },
+  {
+    "name": "Koraidon",
+    "type1": "Fighting",
+    "type2": "Dragon"
+  },
+  {
+    "name": "Tauros-Paldea",
+    "type1": "Fighting",
+    "type2": null
+  },
+  {
+    "name": "Tauros-Paldea-Blaze",
+    "type1": "Fighting",
+    "type2": "Fire"
+  },
+  {
+    "name": "Gouging Fire",
+    "type1": "Fire",
+    "type2": "Dragon"
+  }
+]

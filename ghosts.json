@@ -1,0 +1,1017 @@
+[
+  {
+    "name": "Pikachu",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Raichu",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Raichu-Alola",
+    "type1": "Electric",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Clefairy",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Clefable",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Jigglypuff",
+    "type1": "Normal",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Wigglytuff",
+    "type1": "Normal",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Meowth",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Persian",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Ponyta-Galar",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Rapidash-Galar",
+    "type1": "Psychic",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Slowpoke-Galar",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Doduo",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Dodrio",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Drowzee",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Hypno",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Voltorb",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Electrode",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Chansey",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Electabuzz",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Tauros",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Ditto",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Eevee",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Jolteon",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Porygon",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Snorlax",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Articuno-Galar",
+    "type1": "Psychic",
+    "type2": "Flying"
+  },
+  {
+    "name": "Zapdos",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Mewtwo",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Mew",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Sentret",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Furret",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Hoothoot",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Noctowl",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Pichu",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Cleffa",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Igglybuff",
+    "type1": "Normal",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Mareep",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Flaaffy",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Ampharos",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Aipom",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Espeon",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Misdreavus",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Girafarig",
+    "type1": "Normal",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Dunsparce",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Snubbull",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Granbull",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Teddiursa",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Ursaring",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Corsola-Galar",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Porygon2",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Stantler",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Smeargle",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Elekid",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Blissey",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Raikou",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Lugia",
+    "type1": "Psychic",
+    "type2": "Flying"
+  },
+  {
+    "name": "Ralts",
+    "type1": "Psychic",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Kirlia",
+    "type1": "Psychic",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Gardevoir",
+    "type1": "Psychic",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Slakoth",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Vigoroth",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Slaking",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Azurill",
+    "type1": "Normal",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Plusle",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Minun",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Spoink",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Grumpig",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Swablu",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Zangoose",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Shuppet",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Banette",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Duskull",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Dusclops",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Chimecho",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Deoxys",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Deoxys-Attack",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Deoxys-Defense",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Deoxys-Speed",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Starly",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Staravia",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Staraptor",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Shinx",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Luxio",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Luxray",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Pachirisu",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Ambipom",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Drifloon",
+    "type1": "Ghost",
+    "type2": "Flying"
+  },
+  {
+    "name": "Drifblim",
+    "type1": "Ghost",
+    "type2": "Flying"
+  },
+  {
+    "name": "Mismagius",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Chingling",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Happiny",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Munchlax",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Electivire",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Porygon-Z",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Dusknoir",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Rotom",
+    "type1": "Electric",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Rotom-Fan",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Uxie",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Mesprit",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Azelf",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Regigigas",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Cresselia",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Arceus",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Blitzle",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Zebstrika",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Minccino",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Cinccino",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Gothita",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Gothorita",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Gothitelle",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Solosis",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Duosion",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Reuniclus",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Tynamo",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Eelektrik",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Eelektross",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Rufflet",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Braviary",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Tornadus",
+    "type1": "Flying",
+    "type2": null
+  },
+  {
+    "name": "Tornadus-Therian",
+    "type1": "Flying",
+    "type2": null
+  },
+  {
+    "name": "Thundurus",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Thundurus-Therian",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Meloetta",
+    "type1": "Normal",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Fletchling",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Flabébé",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Floette",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Floette-Eternal",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Florges",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Espurr",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Meowstic",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Meowstic-F",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Sylveon",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Dedenne",
+    "type1": "Electric",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Hoopa",
+    "type1": "Psychic",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Pikipek",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Trumbeak",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Toucannon",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Yungoos",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Gumshoos",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Oricorio-Pom-Pom",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Oricorio-Pa'u",
+    "type1": "Psychic",
+    "type2": "Flying"
+  },
+  {
+    "name": "Oricorio-Sensu",
+    "type1": "Ghost",
+    "type2": "Flying"
+  },
+  {
+    "name": "Comfey",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Oranguru",
+    "type1": "Normal",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Komala",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Mimikyu",
+    "type1": "Ghost",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Cosmog",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Cosmoem",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Lunala",
+    "type1": "Psychic",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Necrozma",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Necrozma-Dawn-Wings",
+    "type1": "Psychic",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Skwovet",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Greedent",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Rookidee",
+    "type1": "Flying",
+    "type2": null
+  },
+  {
+    "name": "Corvisquire",
+    "type1": "Flying",
+    "type2": null
+  },
+  {
+    "name": "Sinistea",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Polteageist",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Hatenna",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Hattrem",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Hatterene",
+    "type1": "Psychic",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Milcery",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Alcremie",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Pincurchin",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Indeedee",
+    "type1": "Psychic",
+    "type2": "Normal"
+  },
+  {
+    "name": "Indeedee-F",
+    "type1": "Psychic",
+    "type2": "Normal"
+  },
+  {
+    "name": "Zacian",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Regieleki",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Spectrier",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Calyrex-Shadow",
+    "type1": "Psychic",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Wyrdeer",
+    "type1": "Normal",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Enamorus",
+    "type1": "Fairy",
+    "type2": "Flying"
+  },
+  {
+    "name": "Enamorus-Therian",
+    "type1": "Fairy",
+    "type2": "Flying"
+  },
+  {
+    "name": "Zorua-Hisuian",
+    "type1": "Normal",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Zoroark-Hisuian",
+    "type1": "Normal",
+    "type2": "Ghost"
+  },
+  {
+    "name": "Braviary-Hisuian",
+    "type1": "Psychic",
+    "type2": "Flying"
+  },
+  {
+    "name": "Lechonk",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Oinkologne",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Oinkologne-F",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Pawmi",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Tandemaus",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Maushold",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Fidough",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Dachsbun",
+    "type1": "Fairy",
+    "type2": null
+  },
+  {
+    "name": "Squawkabilly",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Squawkabilly-Blue",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Squawkabilly-White",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Squawkabilly-Yellow",
+    "type1": "Normal",
+    "type2": "Flying"
+  },
+  {
+    "name": "Tadbulb",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Bellibolt",
+    "type1": "Electric",
+    "type2": null
+  },
+  {
+    "name": "Wattrel",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Kilowattrel",
+    "type1": "Electric",
+    "type2": "Flying"
+  },
+  {
+    "name": "Flittle",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Espathra",
+    "type1": "Psychic",
+    "type2": null
+  },
+  {
+    "name": "Greavard",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Houndstone",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Farigiraf",
+    "type1": "Normal",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Dudunsparce",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Scream Tail",
+    "type1": "Fairy",
+    "type2": "Psychic"
+  },
+  {
+    "name": "Flutter Mane",
+    "type1": "Ghost",
+    "type2": "Fairy"
+  },
+  {
+    "name": "Gimmighoul",
+    "type1": "Ghost",
+    "type2": null
+  },
+  {
+    "name": "Terapagos-Terastal",
+    "type1": "Normal",
+    "type2": null
+  },
+  {
+    "name": "Terapagos-Stellar",
+    "type1": "Normal",
+    "type2": null
+  }
+]

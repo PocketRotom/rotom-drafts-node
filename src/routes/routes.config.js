@@ -38,6 +38,12 @@ router.put("/doReset", teams.doReset);
 
 router.get("/pokemon", pokemon.getPokemon);
 
+router.get("/profCupGhosts", pokemon.getProfCupGhost);
+
+router.get("/profCupZombies", pokemon.getProfCupZombie);
+
+router.get("/profCupSpider", pokemon.getProfCupSpider);
+
 router.get("/getCurrentPick", general.getCurrentPick);
 
 router.put("/setCurrentPick", general.setCurrentPick);
